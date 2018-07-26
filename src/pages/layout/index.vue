@@ -4,8 +4,12 @@
       <sidebar></sidebar>
     </el-aside>
     <el-container>
-      <el-header>Header</el-header>
-      <el-main>Main</el-main>
+      <el-header class="header">
+        <navbar>HEADER</navbar>
+      </el-header>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -17,3 +21,11 @@ export default {
   components: { Sidebar }
 }
 </script>
+
+<style>
+.header {
+  line-height: 60px;
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+}
+</style>

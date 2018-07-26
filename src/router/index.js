@@ -6,7 +6,7 @@ Vue.use(Router)
 export const routes = [{
   path: '/dashboard',
   name: 'dashboard',
-  component: () => import('@/pages/layout'),
+  component: () => import('@/pages/dashboard'),
   meta: { title: 'Dashboard' }
 }, {
   path: '/components',
