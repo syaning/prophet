@@ -6,21 +6,22 @@ Vue.use(Router)
 export const routes = [{
   path: '/dashboard',
   name: 'dashboard',
-  component: () => import('@/pages/dashboard'),
-  meta: { title: 'Dashboard' }
+  component: () => import('@/components/dashboard'),
+  meta: { title: 'dashboard' }
 }, {
   path: '/components',
-  name: 'componnets',
-  component: () => import('@/pages/layout'),
-  meta: { title: 'Components' }
+  name: 'components',
+  component: () => import('@/components/layout'),
+  meta: { title: 'components' }
 }, {
   path: '/charts',
   name: 'charts',
-  component: () => import('@/pages/layout'),
-  meta: { title: 'Charts' },
+  component: () => import('@/components/layout'),
+  meta: { title: 'charts' },
   children: [{
     path: 'chart1',
-    component: () => import('@/pages/layout'),
+    name: 'chart1',
+    component: () => import('@/components/layout'),
     meta: { title: 'Chart-1' }
   }]
 }]
@@ -29,7 +30,7 @@ export default new Router({
   routes: [{
     path: '/',
     name: 'index',
-    component: () => import('@/pages/layout'),
+    component: () => import('@/components/layout'),
     children: routes
   }]
 })
