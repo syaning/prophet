@@ -8,7 +8,9 @@
           Hello
           <navbar></navbar>
         </Header>
-        <Content class="content">Content</Content>
+        <Content class="content">
+          <router-view></router-view>
+        </Content>
     </Layout>
 </Layout>
 </template>
@@ -29,6 +31,6 @@ export default {
 }
 
 .content {
-  margin: 2rem;
+  margin: 1.5rem;
 }
 </style>
