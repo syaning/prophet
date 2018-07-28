@@ -13,6 +13,7 @@
   "dependencies": {
     "iview": "^2.14.3",
     "js-cookie": "^2.2.0",
+    "screenfull": "^3.3.2",
     "vue": "^2.5.2",
     "vue-i18n": "^8.0.0",
     "vue-router": "^3.0.1"
