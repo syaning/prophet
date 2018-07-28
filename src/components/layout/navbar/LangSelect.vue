@@ -1,22 +1,43 @@
 <template>
-  <Dropdown>
+  <Dropdown @on-click="setLang">
     <a href="javascript:void(0)">
       <Icon class="lang-select-icon" type="earth"></Icon>
     </a>
     <DropdownMenu slot="list">
-      <DropdownItem v-for="lang in langs" :key="lang.val">{{ lang.name }}</DropdownItem>
+      <DropdownItem
+        v-for="l in langs"
+        :key="l.locale"
+        :name="l.locale"
+        :disabled="lang === l.locale">
+        {{ l.name }}
+      </DropdownItem>
     </DropdownMenu>
   </Dropdown>
 </template>
 
 <script>
+import Cookies from 'js-cookie'
+
 export default {
   data() {
     return {
       langs: [
-        { name: 'English', val: 'en' },
-        { name: '中文', val: 'zh' }
+        { locale: 'en', name: 'English' },
+        { locale: 'zh', name: '中文' }
       ]
+    }
+  },
+
+  computed: {
+    lang() {
+      return this.$i18n.locale
+    }
+  },
+
+  methods: {
+    setLang(lang) {
+      this.$i18n.locale = lang
+      Cookies.set('language', lang)
     }
   }
 }

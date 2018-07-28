@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
+import Cookies from 'js-cookie'
 import enLocale from 'iview/dist/locale/en-US'
 import zhLocale from 'iview/dist/locale/zh-CN'
 import en from './en'
@@ -13,7 +14,7 @@ const messages = {
 }
 
 const i18n = new VueI18n({
-  locale: 'en',
+  locale: Cookies.get('language') || 'zh',
   messages
 })
 

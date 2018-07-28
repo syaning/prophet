@@ -3,14 +3,16 @@
     <template v-for="menu in menus">
       <router-link :to="menu.path" v-if="!menu.children" :key="menu.name">
         <MenuItem :name="menu.name">
-          {{ menu.meta.title }}
+          {{ $t(`route.${menu.meta.title}`) }}
         </MenuItem>
       </router-link>
       <Submenu v-else :name="menu.name" :key="menu.name">
-        <template slot="title">{{ menu.meta.title }}</template>
+        <template slot="title">
+          {{ $t(`route.${menu.meta.title}`) }}
+        </template>
         <router-link v-for="item in menu.children" :key="item.name" :to="item.path">
           <MenuItem :name="item.name">
-            {{ item.meta.title }}
+            {{ $t(`route.${item.meta.title}`) }}
           </MenuItem>
         </router-link>
       </Submenu>
