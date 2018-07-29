@@ -1,16 +1,20 @@
 import Vue from 'vue'
 import iView from 'iview'
 import Router from 'vue-router'
-
-import Empty from '@/components/layout/Empty'
+import Layout from '@/components/layout'
 
 Vue.use(Router)
 
-export const routes = [{
+const routes = [{
   path: '/dashboard',
-  name: 'dashboard',
-  component: () => import('@/components/dashboard'),
-  meta: { title: 'dashboard', icon: 'ios-speedometer' }
+  redirect: '/dashboard/index',
+  component: Layout,
+  children: [{
+    path: 'index',
+    name: 'dashboard',
+    component: () => import('@/components/dashboard'),
+    meta: { title: 'dashboard', icon: 'ios-speedometer' }
+  }]
 }, {
   path: '/components',
   name: 'components',
@@ -19,19 +23,24 @@ export const routes = [{
 }, {
   path: '/charts',
   name: 'charts',
-  component: () => import('@/components/layout'),
+  component: Layout,
   meta: { title: 'charts', icon: 'ios-speedometer-outline' },
   children: [{
     path: 'chart1',
     name: 'chart1',
     component: () => import('@/components/layout'),
     meta: { title: 'Chart-1' }
+  }, {
+    path: 'chart2',
+    name: 'chart2',
+    component: () => import('@/components/layout'),
+    meta: { title: 'Chart-2', hidden: true }
   }]
 }, {
   path: '/tables',
   name: 'tables',
   redirect: '/tables/basic',
-  component: Empty,
+  component: Layout,
   meta: { title: 'tables', icon: 'ios-grid-view' },
   children: [{
     path: 'basic',
@@ -46,13 +55,35 @@ export const routes = [{
   }]
 }]
 
+export const menus = routes.reduce((ret, route) => {
+  if (route.meta && !route.meta.hidden) {
+    if (route.children) {
+      const items = route.children.filter(subroute => {
+        return subroute.meta && !subroute.meta.hidden
+      })
+      if (items.length) {
+        route.items = items
+        ret.push(route)
+      }
+    } else {
+      ret.push(route)
+    }
+  } else {
+    route.children.forEach(subroute => {
+      if (subroute.meta && !subroute.meta.hidden) {
+        ret.push(subroute)
+      }
+    })
+  }
+  return ret
+}, [])
+
 const router = new Router({
   routes: [{
     path: '/',
     name: 'index',
-    component: () => import('@/components/layout'),
-    children: routes
-  }]
+    redirect: '/dashboard'
+  }, ...routes]
 })
 
 router.beforeEach((to, from, next) => {
