@@ -1,5 +1,5 @@
 <template>
-  <Menu :active-name="activeName" width="auto" theme="dark">
+  <Menu :active-name="activeName" :open-names="openNames" width="auto" theme="dark">
     <template v-for="menu in menus">
       <router-link :to="{ name: menu.name }" v-if="!menu.items" :key="menu.name">
         <MenuItem :name="menu.name">
@@ -29,7 +29,34 @@ export default {
   data() {
     return {
       menus,
-      activeName: 'dashboard'
+      activeName: 'dashboard',
+      openNames: []
+    }
+  },
+
+  created() {
+    this.updateMenuStatus(this.$route)
+  },
+
+  methods: {
+    updateMenuStatus(route) {
+      this.activeName = route.name
+
+      for (let i = 0; i < this.menus.length; i++) {
+        const menu = this.menus[i]
+
+        if (menu.name === route.name) {
+          this.openNames = []
+          break
+        }
+
+        if (menu.items) {
+          if (menu.items.some(item => item.name === route.name)) {
+            this.openNames = [menu.name]
+            break
+          }
+        }
+      }
     }
   }
 }

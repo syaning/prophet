@@ -8,6 +8,6 @@ export default {
     tables: 'Tables',
     tables_basic: 'Basic Table',
     tables_complex: 'Complex Table',
-    thanks: 'thanks'
+    thanks: 'Thanks'
   }
 }
