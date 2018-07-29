@@ -6,9 +6,11 @@ import 'iview/dist/styles/iview.css'
 import App from './App'
 import router from './router'
 import i18n from './i18n'
+import date from './filters/date'
 
 Vue.config.productionTip = false
 Vue.use(iView)
+Vue.filter('date', date)
 
 /* eslint-disable no-new */
 new Vue({
