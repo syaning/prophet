@@ -7,6 +7,7 @@ export default {
     chartjs: 'Chart.js',
     tables: '表格',
     tables_basic: '基础表格',
-    tables_complex: '复杂表格'
+    tables_complex: '复杂表格',
+    thanks: '致谢'
   }
 }

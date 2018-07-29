@@ -63,6 +63,16 @@ const routes = [{
     component: () => import('@/components/tables/ComplexTable'),
     meta: { title: 'tables_complex' }
   }]
+}, {
+  path: '/thanks',
+  redirect: '/thanks/index',
+  component: Layout,
+  children: [{
+    path: 'index',
+    name: 'thanks',
+    component: () => import('@/components/thanks'),
+    meta: { title: 'thanks', icon: 'ios-heart-outline' }
+  }]
 }]
 
 export const menus = routes.reduce((ret, route) => {
