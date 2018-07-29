@@ -20,6 +20,8 @@ npm run build --report
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
+Logo from https://www.iconfinder.com/icons/2913099/character_cute_elf_fairy_fantasy_magic_rpg_icon
+
 ## iview components
 
 [x] grid

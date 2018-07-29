@@ -5,7 +5,6 @@
     </Sider>
     <Layout>
         <Header class="header">
-          Hello
           <navbar></navbar>
         </Header>
         <Content class="content">
@@ -30,6 +29,7 @@ export default {
 .header {
   background: #fff;
   border-bottom: 1px solid #e6e6e6;
+  padding-left: 20px;
 }
 
 .content {
