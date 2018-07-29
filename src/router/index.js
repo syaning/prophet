@@ -24,17 +24,12 @@ const routes = [{
   path: '/charts',
   name: 'charts',
   component: Layout,
-  meta: { title: 'charts', icon: 'ios-speedometer-outline' },
+  meta: { title: 'charts', icon: 'pie-graph' },
   children: [{
-    path: 'chart1',
-    name: 'chart1',
-    component: () => import('@/components/layout'),
-    meta: { title: 'Chart-1' }
-  }, {
-    path: 'chart2',
-    name: 'chart2',
-    component: () => import('@/components/layout'),
-    meta: { title: 'Chart-2', hidden: true }
+    path: 'chartjs',
+    name: 'chartjs',
+    component: () => import('@/components/charts/chartjs'),
+    meta: { title: 'chartjs' }
   }]
 }, {
   path: '/tables',
