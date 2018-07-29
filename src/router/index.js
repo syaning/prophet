@@ -27,9 +27,14 @@ const routes = [{
   }]
 }, {
   path: '/components',
-  name: 'components',
-  component: () => import('@/components/layout'),
-  meta: { title: 'components', icon: 'compass' }
+  redirect: '/components/index',
+  component: Layout,
+  children: [{
+    path: 'index',
+    name: 'components',
+    component: () => import('@/components/components'),
+    meta: { title: 'components', icon: 'compass' }
+  }]
 }, {
   path: '/charts',
   name: 'charts',
