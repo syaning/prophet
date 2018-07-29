@@ -6,6 +6,16 @@ import Layout from '@/components/layout'
 Vue.use(Router)
 
 const routes = [{
+  path: '/home',
+  redirect: '/home/index',
+  component: Layout,
+  children: [{
+    path: 'index',
+    name: 'home',
+    component: () => import('@/components/home'),
+    meta: { title: 'home', icon: 'ios-home-outline' }
+  }]
+}, {
   path: '/dashboard',
   redirect: '/dashboard/index',
   component: Layout,
@@ -13,18 +23,18 @@ const routes = [{
     path: 'index',
     name: 'dashboard',
     component: () => import('@/components/dashboard'),
-    meta: { title: 'dashboard', icon: 'ios-speedometer' }
+    meta: { title: 'dashboard', icon: 'speedometer' }
   }]
 }, {
   path: '/components',
   name: 'components',
   component: () => import('@/components/layout'),
-  meta: { title: 'components', icon: 'ios-speedometer' }
+  meta: { title: 'components', icon: 'compass' }
 }, {
   path: '/charts',
   name: 'charts',
   component: Layout,
-  meta: { title: 'charts', icon: 'pie-graph' },
+  meta: { title: 'charts', icon: 'stats-bars' },
   children: [{
     path: 'chartjs',
     name: 'chartjs',
@@ -36,7 +46,7 @@ const routes = [{
   name: 'tables',
   redirect: '/tables/basic',
   component: Layout,
-  meta: { title: 'tables', icon: 'ios-grid-view' },
+  meta: { title: 'tables', icon: 'grid' },
   children: [{
     path: 'basic',
     name: 'basic_table',

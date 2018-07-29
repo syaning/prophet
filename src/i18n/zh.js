@@ -1,6 +1,7 @@
 export default {
   route: {
-    dashboard: '首页',
+    home: '首页',
+    dashboard: 'Dashboard',
     components: '组件',
     charts: '图表',
     chartjs: 'Chart.js',

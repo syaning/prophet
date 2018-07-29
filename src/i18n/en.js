@@ -1,5 +1,6 @@
 export default {
   route: {
+    home: 'Home',
     dashboard: 'Dashboard',
     components: 'Components',
     charts: 'Charts',

@@ -34,6 +34,7 @@ export default {
 
 .content {
   margin: 1.5rem;
+  position: relative;
 }
 
 .fade-transform-leave-active,
