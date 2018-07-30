@@ -5,7 +5,7 @@
     </Alert>
 
     <Row :gutter="16">
-      <Col :xs="24" :md="4" class-name="component-col">
+      <Col :xs="24" :md="6" class-name="component-col">
         <Card dis-hover :bordered="false" class="btn-card">
           <p slot="title">Buttons</p>
           <Button type="info">Info</Button>
@@ -30,7 +30,7 @@
         </Card>
       </Col>
 
-      <Col :xs="24" :md="4" class-name="component-col">
+      <Col :xs="24" :md="6" class-name="component-col">
         <Card dis-hover :bordered="false">
           <p slot="title">Tags</p>
           <Tag closable color="blue">Tag 1</Tag>
@@ -59,7 +59,7 @@
         </Card>
       </Col>
 
-      <Col :xs="24" :md="8" class-name="component-col">
+      <Col :xs="24" :md="4" class-name="component-col">
         <Card dis-hover :bordered="false">
           <p slot="title">Timeline</p>
           <Timeline>
