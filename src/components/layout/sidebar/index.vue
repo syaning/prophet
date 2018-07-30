@@ -29,13 +29,16 @@ export default {
   data() {
     return {
       menus,
-      activeName: 'dashboard',
+      activeName: '',
       openNames: []
     }
   },
 
   created() {
     this.updateMenuStatus(this.$route)
+    this.$router.afterEach(to => {
+      this.updateMenuStatus(to)
+    })
   },
 
   methods: {

@@ -38,6 +38,7 @@ const routes = [{
 }, {
   path: '/charts',
   name: 'charts',
+  redirect: '/charts/chartjs',
   component: Layout,
   meta: { title: 'charts', icon: 'stats-bars' },
   children: [{
@@ -102,7 +103,7 @@ const router = new Router({
   routes: [{
     path: '/',
     name: 'index',
-    redirect: '/dashboard'
+    redirect: '/home'
   }, ...routes]
 })
 
