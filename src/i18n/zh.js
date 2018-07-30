@@ -5,6 +5,7 @@ export default {
     components: '组件',
     charts: '图表',
     chartjs: 'Chart.js',
+    g2: 'G2',
     tables: '表格',
     tables_basic: '基础表格',
     tables_complex: '复杂表格',

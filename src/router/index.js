@@ -46,6 +46,11 @@ const routes = [{
     name: 'chartjs',
     component: () => import('@/components/charts/chartjs'),
     meta: { title: 'chartjs' }
+  }, {
+    path: 'G2',
+    name: 'g2',
+    component: () => import('@/components/charts/g2'),
+    meta: { title: 'g2' }
   }]
 }, {
   path: '/tables',
