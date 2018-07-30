@@ -3,6 +3,8 @@ export default {
     home: 'Home',
     dashboard: 'Dashboard',
     components: 'Components',
+    iview: 'iView',
+    editor: 'Editor',
     charts: 'Charts',
     chartjs: 'Chart.js',
     g2: 'G2',

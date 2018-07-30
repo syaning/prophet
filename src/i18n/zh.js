@@ -3,6 +3,8 @@ export default {
     home: '首页',
     dashboard: 'Dashboard',
     components: '组件',
+    iview: 'iView',
+    editor: '编辑器',
     charts: '图表',
     chartjs: 'Chart.js',
     g2: 'G2',

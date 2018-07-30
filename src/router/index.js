@@ -27,13 +27,19 @@ const routes = [{
   }]
 }, {
   path: '/components',
-  redirect: '/components/index',
+  redirect: '/components/iview',
   component: Layout,
+  meta: { title: 'components', icon: 'compass' },
   children: [{
-    path: 'index',
-    name: 'components',
+    path: 'iview',
+    name: 'iview',
+    component: () => import('@/components/iview'),
+    meta: { title: 'iview' }
+  }, {
+    path: 'editor',
+    name: 'editor',
     component: () => import('@/components/editor'),
-    meta: { title: 'components', icon: 'compass' }
+    meta: { title: 'editor' }
   }]
 }, {
   path: '/charts',
