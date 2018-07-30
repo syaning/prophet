@@ -32,7 +32,7 @@ const routes = [{
   children: [{
     path: 'index',
     name: 'components',
-    component: () => import('@/components/components'),
+    component: () => import('@/components/editor'),
     meta: { title: 'components', icon: 'compass' }
   }]
 }, {
