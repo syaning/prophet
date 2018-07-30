@@ -27,6 +27,7 @@ const routes = [{
   }]
 }, {
   path: '/components',
+  name: 'components',
   redirect: '/components/iview',
   component: Layout,
   meta: { title: 'components', icon: 'compass' },
