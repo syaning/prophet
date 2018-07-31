@@ -111,12 +111,18 @@ export const menus = routes.reduce((ret, route) => {
   return ret
 }, [])
 
+const pageRoutes = [{
+  path: '/login',
+  name: 'login',
+  component: () => import('@/components/login')
+}]
+
 const router = new Router({
   routes: [{
     path: '/',
     name: 'index',
     redirect: '/home'
-  }, ...routes]
+  }, ...routes, ...pageRoutes]
 })
 
 router.beforeEach((to, from, next) => {

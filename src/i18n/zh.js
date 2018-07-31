@@ -1,7 +1,7 @@
 export default {
   route: {
     home: '首页',
-    dashboard: 'Dashboard',
+    dashboard: '仪表盘',
     components: '组件',
     iview: 'iView',
     editor: '编辑器',

@@ -5,6 +5,7 @@
     <div style="float: right;">
       <full-screen style="margin-right: 1rem;"></full-screen>
       <lang-select></lang-select>
+      <user-info style="margin-left: 1.5rem;"></user-info>
     </div>
   </div>
 </template>
@@ -13,9 +14,15 @@
 import BreadCrumbs from './BreadCrumbs'
 import FullScreen from './FullScreen'
 import LangSelect from './LangSelect'
+import UserInfo from './UserInfo'
 
 export default {
-  components: { BreadCrumbs, FullScreen, LangSelect }
+  components: {
+    BreadCrumbs,
+    FullScreen,
+    LangSelect,
+    UserInfo
+  }
 }
 </script>
 
