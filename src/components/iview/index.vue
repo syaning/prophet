@@ -75,7 +75,7 @@
     </Row>
 
     <Row>
-      <Col span="24">
+      <Col span="24" class-name="component-col">
         <Card dis-hover :bordered="false">
           <p slot="title">Steps</p>
           <Steps :current="1">
@@ -87,8 +87,85 @@
         </Card>
       </Col>
     </Row>
+
+    <Row :gutter="16">
+      <Col :xs="24" :md="12">
+        <Card dis-hover :bordered="false">
+          <p slot="title">Form</p>
+          <Form :model="user" :label-width="80">
+            <FormItem label="Username" required>
+              <Input v-model="user.username" placeholder="username" />
+            </FormItem>
+            <FormItem label="Gender" prop="gender" required>
+              <RadioGroup v-model="user.gender">
+                <Radio label="male">
+                  <Icon type="md-male" color="#5cadff"></Icon>
+                </Radio>
+                <Radio label="female">
+                  <Icon type="md-female" color="#e17da8"></Icon>
+                </Radio>
+              </RadioGroup>
+            </FormItem>
+            <FormItem label="Hobby">
+              <CheckboxGroup v-model="user.hobby">
+                <Checkbox label="music">Music</Checkbox>
+                <Checkbox label="movie">Movie</Checkbox>
+                <Checkbox label="sports">Sports</Checkbox>
+              </CheckboxGroup>
+            </FormItem>
+            <FormItem label="Active">
+              <i-switch v-model="user.active" size="small" />
+            </FormItem>
+            <FormItem label="City">
+              <Select v-model="user.city">
+                <Option value="newyork">New York</Option>
+                <Option value="london">London</Option>
+                <Option value="la">L.A.</Option>
+              </Select>
+            </FormItem>
+            <FormItem label="Birthday">
+              <DatePicker type="date" v-model="user.birthday" style="width: 100%;"></DatePicker>
+            </FormItem>
+            <FormItem label="Rate">
+              <Rate v-model="user.rate" />
+            </FormItem>
+            <FormItem label="Color">
+              <ColorPicker v-model="user.color" size="small" />
+            </FormItem>
+          </Form>
+        </Card>
+      </Col>
+
+      <Col :xs="24" :md="12">
+        <Card dis-hover :bordered="false">
+          <p slot="title">Tab</p>
+          <Tabs value="tab1">
+            <TabPane v-for="i in [1, 2, 3]" :key="i" :label="`Tab${i}`" :name="`tab${i}`">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</TabPane>
+          </Tabs>
+        </Card>
+      </Col>
+    </Row>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      user: {
+        username: '',
+        gender: '',
+        hobby: [],
+        active: true,
+        city: '',
+        birthday: '',
+        rate: 4,
+        color: '#2b85e4'
+      }
+    }
+  }
+}
+</script>
 
 <style scoped>
 .btn-card button {

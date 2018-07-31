@@ -10,7 +10,7 @@
     <Modal v-model="modal.edit" title="Edit" @on-ok="update">
       <Form ref="editForm" :model="currentUser" :rules="rules" :label-width="80">
         <FormItem label="Name" prop="name" required>
-          <Input v-model="currentUser.name"></Input>
+          <Input v-model="currentUser.name" />
         </FormItem>
         <FormItem label="Gender" prop="gender" required>
           <RadioGroup v-model="currentUser.gender">
@@ -26,16 +26,16 @@
           <DatePicker type="date" v-model="currentUser.birthday" style="width: 100%;"></DatePicker>
         </FormItem>
         <FormItem label="City" prop="city">
-          <Input v-model="currentUser.city"></Input>
+          <Input v-model="currentUser.city" />
         </FormItem>
         <FormItem label="School" prop="school">
-          <Input v-model="currentUser.school"></Input>
+          <Input v-model="currentUser.school" />
         </FormItem>
         <FormItem label="Major" prop="major">
-          <Input v-model="currentUser.major"></Input>
+          <Input v-model="currentUser.major" />
         </FormItem>
         <FormItem label="QQ" prop="qq">
-          <Input v-model="currentUser.qq"></Input>
+          <Input v-model="currentUser.qq" />
         </FormItem>
       </Form>
       <div slot="footer">
