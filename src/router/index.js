@@ -13,7 +13,7 @@ const routes = [{
     path: 'index',
     name: 'home',
     component: () => import('@/components/home'),
-    meta: { title: 'home', icon: 'ios-home-outline' }
+    meta: { title: 'home', icon: 'ios-home' }
   }]
 }, {
   path: '/dashboard',
@@ -23,14 +23,14 @@ const routes = [{
     path: 'index',
     name: 'dashboard',
     component: () => import('@/components/dashboard'),
-    meta: { title: 'dashboard', icon: 'speedometer' }
+    meta: { title: 'dashboard', icon: 'ios-compass' }
   }]
 }, {
   path: '/components',
   name: 'components',
   redirect: '/components/iview',
   component: Layout,
-  meta: { title: 'components', icon: 'compass' },
+  meta: { title: 'components', icon: 'ios-construct' },
   children: [{
     path: 'iview',
     name: 'iview',
@@ -47,7 +47,7 @@ const routes = [{
   name: 'charts',
   redirect: '/charts/chartjs',
   component: Layout,
-  meta: { title: 'charts', icon: 'stats-bars' },
+  meta: { title: 'charts', icon: 'ios-stats' },
   children: [{
     path: 'chartjs',
     name: 'chartjs',
@@ -64,7 +64,7 @@ const routes = [{
   name: 'tables',
   redirect: '/tables/basic',
   component: Layout,
-  meta: { title: 'tables', icon: 'grid' },
+  meta: { title: 'tables', icon: 'md-grid' },
   children: [{
     path: 'basic',
     name: 'basic_table',
@@ -84,7 +84,7 @@ const routes = [{
     path: 'index',
     name: 'thanks',
     component: () => import('@/components/thanks'),
-    meta: { title: 'thanks', icon: 'ios-heart-outline' }
+    meta: { title: 'thanks', icon: 'ios-heart' }
   }]
 }]
 

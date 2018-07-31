@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p><Icon type="heart" color="#ed3f14"></Icon> Thanks for these open-source projects:</p>
+    <p><Icon type="ios-heart" color="#ed3f14"></Icon> Thanks for these open-source projects:</p>
     <ul style="margin-left: 1.5rem;">
       <li v-for="pj in projects" :key="pj.name">
         <a :href="pj.url" target="_blank">{{ pj.name }}</a>

@@ -15,10 +15,10 @@
         <FormItem label="Gender" prop="gender" required>
           <RadioGroup v-model="currentUser.gender">
             <Radio label="male">
-              <Icon type="male" color="#5cadff"></Icon>
+              <Icon type="md-male" color="#5cadff"></Icon>
             </Radio>
             <Radio label="female">
-              <Icon type="female" color="#e17da8"></Icon>
+              <Icon type="md-female" color="#e17da8"></Icon>
             </Radio>
           </RadioGroup>
         </FormItem>
@@ -140,9 +140,9 @@ export default {
           render: (h, params) => {
             const gender = params.row.gender
             if (gender === 'male') {
-              return h('Icon', { props: { type: 'male', color: '#5cadff' } })
+              return h('Icon', { props: { type: 'md-male', color: '#5cadff' } })
             } else if (gender === 'female') {
-              return h('Icon', { props: { type: 'female', color: '#e17da8' } })
+              return h('Icon', { props: { type: 'md-female', color: '#e17da8' } })
             } else {
               return h('span')
             }

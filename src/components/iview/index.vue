@@ -8,43 +8,45 @@
       <Col :xs="24" :md="6" class-name="component-col">
         <Card dis-hover :bordered="false" class="btn-card">
           <p slot="title">Buttons</p>
+          <Button>Default</Button>
+          <Button type="primary">Primary</Button>
+          <Button type="dashed">Dashed</Button>
+          <Button type="text">Text</Button>
           <Button type="info">Info</Button>
           <Button type="success">Success</Button>
           <Button type="warning">Warning</Button>
           <Button type="error">Error</Button>
-          <Button type="primary">Primary</Button>
-          <Button type="ghost">Ghost</Button>
-          <Button type="dashed">Dashed</Button>
-          <Button type="text">Text</Button>
+          <Button type="info" ghost>Info</Button>
+          <Button type="success" ghost>Success</Button>
+          <Button type="warning" ghost>Warning</Button>
+          <Button type="error" ghost>Error</Button>
           <Button type="primary" shape="circle" icon="ios-search"></Button>
-          <ButtonGroup>
-            <Button type="primary">
-              <Icon type="chevron-left"></Icon>
-              Backward
-            </Button>
-            <Button type="primary">
-              Forward
-              <Icon type="chevron-right"></Icon>
-            </Button>
-          </ButtonGroup>
         </Card>
       </Col>
 
       <Col :xs="24" :md="6" class-name="component-col">
         <Card dis-hover :bordered="false">
           <p slot="title">Tags</p>
-          <Tag closable color="blue">Tag 1</Tag>
-          <Tag closable color="green">Tag 2</Tag>
-          <Tag closable color="red">Tag 3</Tag>
-          <Tag closable color="yellow">Tag 4</Tag>
-          <Tag type="border" closable color="blue">Tag 1</Tag>
-          <Tag type="border" closable color="green">Tag 2</Tag>
-          <Tag type="border" closable color="red">Tag 3</Tag>
-          <Tag type="border" closable color="yellow">Tag 4</Tag>
-          <Tag type="dot" closable color="blue">Tag 1</Tag>
-          <Tag type="dot" closable color="green">Tag 2</Tag>
-          <Tag type="dot" closable color="red">Tag 3</Tag>
-          <Tag type="dot" closable color="yellow">Tag 4</Tag>
+          <Tag color="default">default</Tag>
+          <Tag color="primary">primary</Tag>
+          <Tag color="success">success</Tag>
+          <Tag color="error">error</Tag>
+          <Tag color="warning">warning</Tag>
+          <Tag color="magenta">magenta</Tag>
+          <Tag color="red">red</Tag>
+          <Tag color="volcano">volcano</Tag>
+          <Tag color="orange">orange</Tag>
+          <Tag color="gold">gold</Tag>
+          <Tag color="yellow">yellow</Tag>
+          <Tag color="lime">lime</Tag>
+          <Tag color="green">green</Tag>
+          <Tag color="cyan">cyan</Tag>
+          <Tag color="blue">blue</Tag>
+          <Tag color="geekblue">geekblue</Tag>
+          <Tag color="purple">purple</Tag>
+          <Tag color="#FFA2D3">Custom Color</Tag>
+          <Tag type="border" closable color="primary">closable</Tag>
+          <Tag type="dot" closable color="success">dot</Tag>
         </Card>
       </Col>
 

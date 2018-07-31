@@ -1,5 +1,5 @@
 <template>
-  <Icon class="full-screen-icon" :type="fullScreen ? 'arrow-shrink' : 'arrow-expand'" @click="toggleFullScreen"></Icon>
+  <Icon class="full-screen-icon" :type="fullScreen ? 'md-contract' : 'md-expand'" @click="toggleFullScreen"></Icon>
 </template>
 
 <script>
@@ -25,6 +25,7 @@ export default {
 .full-screen-icon {
   cursor: pointer;
   color: #80848f;
+  font-size: 1rem;
 
   &:hover {
     color: #2d8cf0;

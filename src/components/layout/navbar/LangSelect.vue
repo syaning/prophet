@@ -1,7 +1,7 @@
 <template>
   <Dropdown @on-click="setLang">
     <a href="javascript:void(0)">
-      <Icon class="lang-select-icon" type="earth"></Icon>
+      <Icon class="lang-select-icon" type="md-globe"></Icon>
     </a>
     <DropdownMenu slot="list">
       <DropdownItem
@@ -47,6 +47,7 @@ export default {
 .lang-select-icon {
   cursor: pointer;
   color: #80848f;
+  font-size: 1rem;
 
   &:hover {
     color: #2d8cf0;

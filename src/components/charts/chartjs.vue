@@ -5,7 +5,7 @@
         <Card dis-hover :bordered="false">
           <p slot="title">Pie</p>
           <a href="#" slot="extra" @click.prevent="refreshPie">
-            <Icon type="ios-loop-strong"></Icon>
+            <Icon type="md-refresh"></Icon>
             Refresh
           </a>
           <canvas ref="pie"></canvas>

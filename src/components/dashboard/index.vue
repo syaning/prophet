@@ -10,7 +10,7 @@
             <p>New Visits</p>
             <h3>57,820</h3>
           </div>
-          <Icon type="person"></Icon>
+          <Icon type="md-person"></Icon>
         </Card>
       </Col>
 
@@ -21,9 +21,9 @@
           </i-circle>
           <div class="stats-content">
             <p>Purchases</p>
-            <h3>￥89,745</h3>
+            <h3>$89,745</h3>
           </div>
-          <Icon type="social-yen"></Icon>
+          <Icon type="logo-usd"></Icon>
         </Card>
       </Col>
 
@@ -36,7 +36,7 @@
             <p>Active Users</p>
             <h3>178,391</h3>
           </div>
-          <Icon type="happy"></Icon>
+          <Icon type="md-happy"></Icon>
         </Card>
       </Col>
 
@@ -49,7 +49,7 @@
             <p>Returned</p>
             <h3>32,592</h3>
           </div>
-          <Icon type="refresh"></Icon>
+          <Icon type="md-refresh"></Icon>
         </Card>
       </Col>
     </Row>

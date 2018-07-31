@@ -28,7 +28,7 @@ export function createActions(actions, context) {
         }
       }
     }, [
-      h('a', ['Actions ', h('Icon', { props: { type: 'arrow-down-b' } })]),
+      h('a', ['Actions ', h('Icon', { props: { type: 'ios-arrow-down' } })]),
       h('DropdownMenu', { slot: 'list' }, items)
     ])
   }
