@@ -28,35 +28,28 @@ import { menus } from '@/router'
 export default {
   data() {
     return {
-      menus,
-      activeName: '',
-      openNames: []
+      menus
     }
   },
 
-  created() {
-    this.updateMenuStatus(this.$route)
-    this.$router.afterEach(to => {
-      this.updateMenuStatus(to)
-    })
-  },
+  computed: {
+    activeName() {
+      return this.$route.name
+    },
 
-  methods: {
-    updateMenuStatus(route) {
-      this.activeName = route.name
+    openNames() {
+      const activeName = this.activeName
 
       for (let i = 0; i < this.menus.length; i++) {
         const menu = this.menus[i]
 
-        if (menu.name === route.name) {
-          this.openNames = []
-          break
+        if (menu.name === activeName) {
+          return []
         }
 
         if (menu.items) {
-          if (menu.items.some(item => item.name === route.name)) {
-            this.openNames = [menu.name]
-            break
+          if (menu.items.some(item => item.name === activeName)) {
+            return [menu.name]
           }
         }
       }
