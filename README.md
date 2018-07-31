@@ -24,57 +24,57 @@ Logo from https://www.iconfinder.com/icons/2913099/character_cute_elf_fairy_fant
 
 ## iview components
 
-[x] grid
-[x] layout
-[x] card
-[ ] collapse
-[ ] split
-[ ] divider
-[ ] cell
+- [x] grid
+- [x] layout
+- [x] card
+- [ ] collapse
+- [ ] split
+- [ ] divider
+- [ ] cell
 
-[x] menu
-[ ] tabs
-[x] dropdown
-[x] page
-[ ] breadcrump
-[ ] badge
-[ ] anchor
-[ ] steps
-[ ] loadingbar
+- [x] menu
+- [ ] tabs
+- [x] dropdown
+- [x] page
+- [ ] breadcrump
+- [ ] badge
+- [ ] anchor
+- [ ] steps
+- [x] loadingbar
 
-[x] input
-[x] radio
-[ ] checkbox
-[ ] switch
-[x] table
-[ ] select
-[ ] autocomplete
-[ ] slider
-[x] datepicker
-[ ] timepicker
-[ ] cascader
-[ ] transfer
-[ ] inputnumber
-[ ] rate
-[ ] upload
-[ ] colorpicker
-[x] form
+- [x] input
+- [x] radio
+- [ ] checkbox
+- [ ] switch
+- [x] table
+- [ ] select
+- [ ] autocomplete
+- [ ] slider
+- [x] datepicker
+- [ ] timepicker
+- [ ] cascader
+- [ ] transfer
+- [ ] inputnumber
+- [ ] rate
+- [ ] upload
+- [ ] colorpicker
+- [x] form
 
-[ ] alert
-[x] message
-[ ] notice
-[x] modal
-[ ] tree
-[ ] tooltip
-[ ] poptip
-[ ] progress
-[ ] avatar
-[x] tag
-[ ] carousel
-[ ] timeline
-[ ] time
+- [ ] alert
+- [x] message
+- [ ] notice
+- [x] modal
+- [ ] tree
+- [ ] tooltip
+- [ ] poptip
+- [ ] progress
+- [ ] avatar
+- [x] tag
+- [ ] carousel
+- [ ] timeline
+- [ ] time
 
-[ ] circle
+- [ ] circle
 
 [ ] affix
 [ ] backtop
