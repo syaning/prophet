@@ -1,55 +1,16 @@
 <template>
   <div>
     <Row :gutter="16">
-      <Col :xs="24" :sm="12" :md=6 class-name="stats-col">
+      <Col :xs="24" :sm="12" :md="6" v-for="stat in stats" :key="stat.title" class-name="stats-col">
         <Card dis-hover :bordered="false" class="stats-card">
-          <i-circle :percent="80" :size="60">
-            <span>80%</span>
+          <i-circle :percent="stat.percent" :size="60">
+            <span>{{ stat.percent + '%' }}</span>
           </i-circle>
           <div class="stats-content">
-            <p>New Visits</p>
-            <h3>57,820</h3>
+            <p>{{ stat.title }}</p>
+            <h3>{{ stat.val | number }}</h3>
           </div>
-          <Icon type="md-person"></Icon>
-        </Card>
-      </Col>
-
-      <Col :xs="24" :sm="12" :md=6 class-name="stats-col">
-        <Card dis-hover :bordered="false" class="stats-card">
-          <i-circle :percent="90" :size="60">
-            <span>90%</span>
-          </i-circle>
-          <div class="stats-content">
-            <p>Purchases</p>
-            <h3>$89,745</h3>
-          </div>
-          <Icon type="logo-usd"></Icon>
-        </Card>
-      </Col>
-
-      <Col :xs="24" :sm="12" :md=6 class-name="stats-col">
-        <Card dis-hover :bordered="false" class="stats-card">
-          <i-circle :percent="81" :size="60">
-            <span>81%</span>
-          </i-circle>
-          <div class="stats-content">
-            <p>Active Users</p>
-            <h3>178,391</h3>
-          </div>
-          <Icon type="md-happy"></Icon>
-        </Card>
-      </Col>
-
-      <Col :xs="24" :sm="12" :md=6 class-name="stats-col">
-        <Card dis-hover :bordered="false" class="stats-card">
-          <i-circle :percent="88" :size="60">
-            <span>88%</span>
-          </i-circle>
-          <div class="stats-content">
-            <p>Returned</p>
-            <h3>32,592</h3>
-          </div>
-          <Icon type="md-refresh"></Icon>
+          <Icon :type="stat.icon"></Icon>
         </Card>
       </Col>
     </Row>
@@ -57,7 +18,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      stats: [
+        { title: 'New Visits', val: 57820, percent: 80, icon: 'md-person' },
+        { title: 'Purchases', val: 89745, percent: 90, icon: 'logo-usd' },
+        { title: 'Active Users', val: 178391, percent: 80, icon: 'md-happy' },
+        { title: 'Returned', val: 32592, percent: 88, icon: 'md-refresh' }
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="scss">
