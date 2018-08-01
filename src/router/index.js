@@ -90,6 +90,7 @@ const router = new Router({
   routes: [{
     path: '/',
     name: 'index',
+    redirect: '/home',
     component: () =>
       import ('@/components/layout'),
     children: menus
@@ -98,10 +99,17 @@ const router = new Router({
     name: 'login',
     component: () =>
       import ('@/components/login')
+  }, {
+    path: '/404',
+    component: () =>
+      import ('@/components/errors/404')
+  }, {
+    path: '*',
+    redirect: '/404'
   }]
 })
 
-const noAuth = ['/login']
+const noAuth = ['/login', '/404']
 
 router.beforeEach((to, from, next) => {
   const requireAuth = noAuth.indexOf(to.path) < 0

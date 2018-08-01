@@ -1,5 +1,5 @@
 <template>
-  <div class="login-page">
+  <div class="page-login">
     <img src="@/assets/logo.png" />
     <Card dis-hover :bordered="false" class="login-card">
       <Form :model="user">
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss">
-.login-page {
+.page-login {
   height: 100vh;
   display: flex;
   flex-direction: column;
