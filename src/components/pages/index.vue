@@ -12,7 +12,7 @@
 
       <Col :xs="24" :md="8">
         <figure class="screenshot">
-          <img class="screenshot" src="@/assets/404.png" @click="toLogin" />
+          <img class="screenshot" src="@/assets/login.png" @click="toLogin" />
           <figcaption>Login</figcaption>
         </figure>
       </Col>
