@@ -1,38 +1,31 @@
 import Vue from 'vue'
 import iView from 'iview'
 import Router from 'vue-router'
-import Layout from '@/components/layout'
 import store from '@/store'
 
 Vue.use(Router)
 
-const routes = [{
+const ViewWrapper = {
+  template: '<router-view></router-view>'
+}
+
+export const menus = [{
   path: '/home',
-  redirect: '/home/index',
-  component: Layout,
-  children: [{
-    path: 'index',
-    name: 'home',
-    component: () =>
-      import ('@/components/home'),
-    meta: { title: 'home', icon: 'ios-home' }
-  }]
+  name: 'home',
+  component: () =>
+    import ('@/components/home'),
+  meta: { title: 'home', icon: 'ios-home' }
 }, {
-  path: '/dashboard',
-  redirect: '/dashboard/index',
-  component: Layout,
-  children: [{
-    path: 'index',
-    name: 'dashboard',
-    component: () =>
-      import ('@/components/dashboard'),
-    meta: { title: 'dashboard', icon: 'ios-compass' }
-  }]
+  path: 'dashboard',
+  name: 'dashboard',
+  component: () =>
+    import ('@/components/dashboard'),
+  meta: { title: 'dashboard', icon: 'ios-compass' }
 }, {
   path: '/components',
   name: 'components',
   redirect: '/components/iview',
-  component: Layout,
+  component: ViewWrapper,
   meta: { title: 'components', icon: 'ios-construct' },
   children: [{
     path: 'iview',
@@ -51,7 +44,7 @@ const routes = [{
   path: '/charts',
   name: 'charts',
   redirect: '/charts/chartjs',
-  component: Layout,
+  component: ViewWrapper,
   meta: { title: 'charts', icon: 'ios-stats' },
   children: [{
     path: 'chartjs',
@@ -70,7 +63,7 @@ const routes = [{
   path: '/tables',
   name: 'tables',
   redirect: '/tables/basic',
-  component: Layout,
+  component: ViewWrapper,
   meta: { title: 'tables', icon: 'md-grid' },
   children: [{
     path: 'basic',
@@ -87,53 +80,25 @@ const routes = [{
   }]
 }, {
   path: '/thanks',
-  redirect: '/thanks/index',
-  component: Layout,
-  children: [{
-    path: 'index',
-    name: 'thanks',
-    component: () =>
-      import ('@/components/thanks'),
-    meta: { title: 'thanks', icon: 'ios-heart' }
-  }]
-}]
-
-export const menus = routes.reduce((ret, route) => {
-  if (route.meta && !route.meta.hidden) {
-    if (route.children) {
-      const items = route.children.filter(subroute => {
-        return subroute.meta && !subroute.meta.hidden
-      })
-      if (items.length) {
-        route.items = items
-        ret.push(route)
-      }
-    } else {
-      ret.push(route)
-    }
-  } else {
-    route.children.forEach(subroute => {
-      if (subroute.meta && !subroute.meta.hidden) {
-        ret.push(subroute)
-      }
-    })
-  }
-  return ret
-}, [])
-
-const pageRoutes = [{
-  path: '/login',
-  name: 'login',
+  name: 'thanks',
   component: () =>
-    import ('@/components/login')
+    import ('@/components/thanks'),
+  meta: { title: 'thanks', icon: 'ios-heart' }
 }]
 
 const router = new Router({
   routes: [{
     path: '/',
     name: 'index',
-    redirect: '/home'
-  }, ...routes, ...pageRoutes]
+    component: () =>
+      import ('@/components/layout'),
+    children: menus
+  }, {
+    path: '/login',
+    name: 'login',
+    component: () =>
+      import ('@/components/login')
+  }]
 })
 
 const noAuth = ['/login']

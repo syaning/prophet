@@ -10,7 +10,7 @@
 export default {
   computed: {
     routes() {
-      return this.$route.matched.filter(route => !!route.name)
+      return this.$route.matched.filter(route => !!route.path)
     }
   }
 }
