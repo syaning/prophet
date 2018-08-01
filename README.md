@@ -1,10 +1,10 @@
+<div align="center">
+  <img width="300" src="./images/logo.png" />
+</div>
+
 # Prophet
 
 Beautiful dashboard based on [Vue](https://vuejs.org/) and [iView](https://www.iviewui.com/).
-
-<div style="text-align: center;">
-  <img src="./images/logo.png" style="width: 300px;">
-</div>
 
 > Logo from https://www.iconfinder.com/icons/2913099/character_cute_elf_fairy_fantasy_magic_rpg_icon
 
