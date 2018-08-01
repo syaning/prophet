@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="300" src="./images/logo.png" />
+  <img width="200" src="./images/logo.png" />
 </div>
 
 # Prophet
@@ -32,7 +32,7 @@ npm run build --report
 
 ## Sponsor
 
-![](./images/sponsor.jpeg)
+<img width="150" src="./images/sponsor.jpeg" />
 
 ## License
 
