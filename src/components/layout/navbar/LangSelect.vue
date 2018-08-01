@@ -16,8 +16,6 @@
 </template>
 
 <script>
-import Cookies from 'js-cookie'
-
 export default {
   data() {
     return {
@@ -37,7 +35,7 @@ export default {
   methods: {
     setLang(lang) {
       this.$i18n.locale = lang
-      Cookies.set('language', lang)
+      this.$store.dispatch('setLang', lang)
     }
   }
 }

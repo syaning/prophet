@@ -19,15 +19,12 @@
         </FormItem>
       </Form>
       <Tag color="green">Admin: amdin / admin</Tag>
-      <Tag color="blue">User: test / test</Tag>
+      <Tag color="blue">User: user / user</Tag>
     </Card>
   </div>
 </template>
 
 <script>
-import api from '@/api'
-console.log(api)
-
 export default {
   data() {
     return {
@@ -40,9 +37,10 @@ export default {
 
   methods: {
     login() {
-      api.login(this.user)
-        .then(data => {
-          this.$router.push('/')
+      this.$store.dispatch('login', this.user)
+        .then(() => {
+          const redirect = this.$route.query.redirect || '/'
+          this.$router.push(redirect)
         })
         .catch(err => {
           this.$Message.error({ content: err.message })

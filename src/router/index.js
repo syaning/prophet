@@ -2,6 +2,7 @@ import Vue from 'vue'
 import iView from 'iview'
 import Router from 'vue-router'
 import Layout from '@/components/layout'
+import store from '@/store'
 
 Vue.use(Router)
 
@@ -12,7 +13,8 @@ const routes = [{
   children: [{
     path: 'index',
     name: 'home',
-    component: () => import('@/components/home'),
+    component: () =>
+      import ('@/components/home'),
     meta: { title: 'home', icon: 'ios-home' }
   }]
 }, {
@@ -22,7 +24,8 @@ const routes = [{
   children: [{
     path: 'index',
     name: 'dashboard',
-    component: () => import('@/components/dashboard'),
+    component: () =>
+      import ('@/components/dashboard'),
     meta: { title: 'dashboard', icon: 'ios-compass' }
   }]
 }, {
@@ -34,12 +37,14 @@ const routes = [{
   children: [{
     path: 'iview',
     name: 'iview',
-    component: () => import('@/components/iview'),
+    component: () =>
+      import ('@/components/iview'),
     meta: { title: 'iview' }
   }, {
     path: 'editor',
     name: 'editor',
-    component: () => import('@/components/editor'),
+    component: () =>
+      import ('@/components/editor'),
     meta: { title: 'editor' }
   }]
 }, {
@@ -51,12 +56,14 @@ const routes = [{
   children: [{
     path: 'chartjs',
     name: 'chartjs',
-    component: () => import('@/components/charts/chartjs'),
+    component: () =>
+      import ('@/components/charts/chartjs'),
     meta: { title: 'chartjs' }
   }, {
     path: 'G2',
     name: 'g2',
-    component: () => import('@/components/charts/g2'),
+    component: () =>
+      import ('@/components/charts/g2'),
     meta: { title: 'g2' }
   }]
 }, {
@@ -68,12 +75,14 @@ const routes = [{
   children: [{
     path: 'basic',
     name: 'basic_table',
-    component: () => import('@/components/tables/BasicTable'),
+    component: () =>
+      import ('@/components/tables/BasicTable'),
     meta: { title: 'tables_basic' }
   }, {
     path: 'complex',
     name: 'complex_table',
-    component: () => import('@/components/tables/ComplexTable'),
+    component: () =>
+      import ('@/components/tables/ComplexTable'),
     meta: { title: 'tables_complex' }
   }]
 }, {
@@ -83,7 +92,8 @@ const routes = [{
   children: [{
     path: 'index',
     name: 'thanks',
-    component: () => import('@/components/thanks'),
+    component: () =>
+      import ('@/components/thanks'),
     meta: { title: 'thanks', icon: 'ios-heart' }
   }]
 }]
@@ -114,7 +124,8 @@ export const menus = routes.reduce((ret, route) => {
 const pageRoutes = [{
   path: '/login',
   name: 'login',
-  component: () => import('@/components/login')
+  component: () =>
+    import ('@/components/login')
 }]
 
 const router = new Router({
@@ -125,13 +136,38 @@ const router = new Router({
   }, ...routes, ...pageRoutes]
 })
 
+const noAuth = ['/login']
+
 router.beforeEach((to, from, next) => {
-    iView.LoadingBar.start()
-    next()
+  const requireAuth = noAuth.indexOf(to.path) < 0
+  const token = store.state.auth.token
+
+  if (requireAuth) {
+    if (token) {
+      next()
+    } else {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+    }
+  } else {
+    if (noAuth.indexOf(to.path) >= 0 && token) {
+      const redirect = to.query.redirect || '/'
+      next(redirect)
+    } else {
+      next()
+    }
+  }
+})
+
+router.beforeEach((to, from, next) => {
+  iView.LoadingBar.start()
+  next()
 })
 
 router.afterEach(() => {
-    iView.LoadingBar.finish()
+  iView.LoadingBar.finish()
 })
 
 export default router
