@@ -89,7 +89,7 @@
     </Row>
 
     <Row :gutter="16">
-      <Col :xs="24" :md="12">
+      <Col :xs="24" :md="12" class-name="component-col">
         <Card dis-hover :bordered="false">
           <p slot="title">Form</p>
           <Form :model="user" :label-width="80">

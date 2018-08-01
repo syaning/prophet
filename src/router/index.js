@@ -26,7 +26,7 @@ export const menus = [{
   name: 'components',
   redirect: '/components/iview',
   component: ViewWrapper,
-  meta: { title: 'components', icon: 'ios-construct' },
+  meta: { title: 'components', icon: 'ios-cube' },
   children: [{
     path: 'iview',
     name: 'iview',
@@ -78,6 +78,12 @@ export const menus = [{
       import ('@/components/tables/ComplexTable'),
     meta: { title: 'tables_complex' }
   }]
+}, {
+  path: 'pages',
+  name: 'pages',
+  component: () =>
+    import ('@/components/pages'),
+  meta: { title: 'pages', icon: 'ios-paper' }
 }, {
   path: '/thanks',
   name: 'thanks',

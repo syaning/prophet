@@ -11,6 +11,7 @@ export default {
     tables: '表格',
     tables_basic: '基础表格',
     tables_complex: '复杂表格',
+    pages: '页面',
     thanks: '致谢'
   }
 }

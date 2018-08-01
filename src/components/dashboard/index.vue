@@ -36,6 +36,7 @@ export default {
 .stats-col {
   margin-bottom: 1rem;
 }
+
 .stats-card {
   display: flex;
   align-items: space-between;
