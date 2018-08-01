@@ -32,7 +32,7 @@ npm run build --report
 
 ## Sponsor
 
-![]('./images/sponsor.jpeg')
+![](./images/sponsor.jpeg)
 
 ## License
 
