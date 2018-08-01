@@ -125,7 +125,7 @@ router.beforeEach((to, from, next) => {
       })
     }
   } else {
-    if (noAuth.indexOf(to.path) >= 0 && token) {
+    if (to.path === '/login' && token) {
       const redirect = to.query.redirect || '/'
       next(redirect)
     } else {
