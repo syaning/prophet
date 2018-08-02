@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@antv/g2": "^3.2.6",
+    "axios": "^0.18.0",
     "chart.js": "^2.7.2",
     "iview": "^3.0.0",
     "js-base64": "^2.4.8",
