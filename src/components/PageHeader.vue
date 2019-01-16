@@ -48,8 +48,8 @@ export default {
 .page-header-breadcrumb {
   margin-bottom: 16px;
 
-  .ivu-breadcrumb > span:last-child {
-    font-weight: 500;
+  > span:last-child {
+    font-weight: 400;
   }
 }
 </style>
