@@ -1,17 +1,15 @@
 export default {
   route: {
     home: '首页',
-    dashboard: '仪表盘',
-    components: '组件',
-    iview: 'iView',
-    editor: '编辑器',
-    charts: '图表',
-    chartjs: 'Chart.js',
-    g2: 'G2',
-    tables: '表格',
-    tables_basic: '基础表格',
-    tables_complex: '复杂表格',
-    pages: '页面',
-    thanks: '致谢'
+
+    dashboard: 'Dashboard',
+    analysis: '分析页',
+    monitor: '监控页',
+    workplace: '工作台',
+
+    form: '表单页',
+    basicForm: '基础表单',
+    stepForm: '分步表单',
+    advancedForm: '高级表单'
   }
 }

@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import store from '@/store'
 import enLocale from 'iview/dist/locale/en-US'
 import zhLocale from 'iview/dist/locale/zh-CN'
 import en from './en'
@@ -14,7 +13,8 @@ const messages = {
 }
 
 const i18n = new VueI18n({
-  locale: store.state.app.lang,
+  // locale: store.state.app.lang,
+  locale: 'en',
   messages
 })
 

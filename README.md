@@ -1,39 +1,29 @@
-<div align="center">
-  <img width="200" src="./images/logo.png" />
-</div>
+# prophet
 
-# Prophet
-
-Beautiful dashboard based on [Vue](https://vuejs.org/) and [iView](https://www.iviewui.com/). [Demo](https://syaning.github.io/prophet)
-
-> Logo from https://www.iconfinder.com/icons/2913099/character_cute_elf_fairy_fantasy_magic_rpg_icon
-
-## Build Setup
-
-``` bash
-# install dependencies
+## Project setup
+```
 npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-## Screenshot
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-![](./images/charts.png)
+### Compiles and minifies for production
+```
+npm run build
+```
 
-![](./images/404.png)
+### Run your tests
+```
+npm run test
+```
 
-## Sponsor
+### Lints and fixes files
+```
+npm run lint
+```
 
-<img width="150" src="./images/sponsor.jpeg" />
-
-## License
-
-[MIT](./LICENSE)
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

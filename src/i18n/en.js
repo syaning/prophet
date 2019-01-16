@@ -1,17 +1,27 @@
 export default {
   route: {
     home: 'Home',
+
     dashboard: 'Dashboard',
-    components: 'Components',
-    iview: 'iView',
-    editor: 'Editor',
-    charts: 'Charts',
-    chartjs: 'Chart.js',
-    g2: 'G2',
-    tables: 'Tables',
-    tables_basic: 'Basic Table',
-    tables_complex: 'Complex Table',
-    pages: 'Pages',
-    thanks: 'Thanks'
+    analysis: 'Analysis',
+    monitor: 'Monitor',
+    workplace: 'Workplace',
+
+    form: 'Form',
+    basicForm: 'Basic Form',
+    stepForm: 'Step Form',
+    advancedForm: 'Advanced Form'
+  },
+
+  basicForm: {
+    desc: 'Form pages are used to collect or verify information to users, and basic forms are common in scenarios where there are fewer data items.',
+
+    title: 'Title',
+    titlePlaceholder: 'Give the target a name',
+    date: 'Start and end date',
+    goal: 'Goal description',
+    goalPlaceholder: 'Please enter your work goals',
+    metrics: 'Metrics',
+    metricsPlaceholder: 'Please enter a metric'
   }
 }

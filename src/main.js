@@ -1,24 +1,17 @@
 import Vue from 'vue'
-import iView from 'iview'
-import 'iview/dist/styles/iview.css'
-import App from './App'
+import iview from 'iview'
+import './styles/index.less'
+import App from './App.vue'
+import i18n from './i18n'
 import router from './router'
 import store from './store'
-import i18n from './i18n'
-import filters from './filters'
 
 Vue.config.productionTip = false
-Vue.use(iView)
-
-Object.keys(filters).forEach(key => {
-  Vue.filter(key, filters[key])
-})
+Vue.use(iview)
 
 new Vue({
-  el: '#app',
   router,
   store,
   i18n,
-  components: { App },
-  template: '<App/>'
-})
+  render: h => h(App)
+}).$mount('#app')
