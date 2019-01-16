@@ -15,7 +15,10 @@
           <router-view></router-view>
         </transition>
       </Content>
-      <Footer class="prophet-footer">copyright</Footer>
+      <Footer class="prophet-footer">
+        <span style="vertical-align: middle;">Copyright &copy; 2018-2019</span>
+        <Icon type="logo-github" style="margin-left: 10px;" />
+      </Footer>
     </Layout>
   </Layout>
 </template>
