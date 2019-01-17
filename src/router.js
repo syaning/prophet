@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import iView from 'iview'
 import Router from 'vue-router'
 import Home from './views/home'
 import ViewWrapper from './components/ViewWrapper'
@@ -51,7 +52,7 @@ export const menus = [{
   }]
 }]
 
-export default new Router({
+const router = new Router({
   routes: [{
     path: '/',
     name: 'home',
@@ -60,3 +61,14 @@ export default new Router({
     children: menus
   }]
 })
+
+router.beforeEach((to, from, next) => {
+  iView.LoadingBar.start()
+  next()
+})
+
+router.afterEach(() => {
+  iView.LoadingBar.finish()
+})
+
+export default router

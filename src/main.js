@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import iview from 'iview'
+import iView from 'iview'
 import './styles/index.less'
 import App from './App.vue'
 import i18n from './i18n'
@@ -7,7 +7,7 @@ import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false
-Vue.use(iview)
+Vue.use(iView)
 
 new Vue({
   router,
