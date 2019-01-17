@@ -1,11 +1,21 @@
 <template>
-  <Menu class="prophet-menubar" theme="dark" width="auto" accordion :active-name="activeName" :open-names="openNames">
+  <Menu
+    class="prophet-menubar"
+    theme="dark"
+    width="auto"
+    accordion
+    :active-name="activeName"
+    :open-names="openNames">
+
     <Submenu v-for="menu in menus" :key="menu.name" :name="menu.name">
       <template slot="title">
         <Icon :type="menu.meta.icon" />
         {{ $t(menu.meta.title) }}
       </template>
-      <router-link v-for="item in menu.children" :key="item.name" :to="{name: item.name}">
+      <router-link
+        v-for="item in menu.children"
+        :key="item.name"
+        :to="{name: item.name}">
         <MenuItem :name="item.name">
           {{ $t(item.meta.title) }}
         </MenuItem>
@@ -25,12 +35,24 @@ export default {
   },
 
   computed: {
-    activeName() {
-      return this.$route.name
-    },
-
     menuNames() {
       return this.menus.map(menu => menu.name)
+    },
+
+    menuItemNames() {
+      return this.menus.reduce((ret, menu) => {
+        return ret.concat(menu.children.map(item => item.name))
+      }, [])
+    },
+
+    activeName() {
+      const matched = this.$route.matched
+      for (let match of matched) {
+        if (this.menuItemNames.includes(match.name)) {
+          return match.name
+        }
+      }
+      return ''
     },
 
     openNames() {

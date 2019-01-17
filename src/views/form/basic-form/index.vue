@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader'
+import PageHeader from '@/components/page-header'
 
 export default {
   components: { PageHeader },

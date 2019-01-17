@@ -2,7 +2,7 @@ import Vue from 'vue'
 import iView from 'iview'
 import Router from 'vue-router'
 import Home from './views/home'
-import ViewWrapper from './components/ViewWrapper'
+import ViewWrapper from './components/view-wrapper'
 
 Vue.use(Router)
 
@@ -42,8 +42,15 @@ export const menus = [{
   }, {
     path: 'step-form',
     name: 'step-form',
+    redirect: '/form/step-form/info',
     component: () => import('@/views/form/step-form'),
-    meta: { title: 'route.stepForm' }
+    meta: { title: 'route.stepForm' },
+    children: [{
+      path: 'info',
+      name: 'step-form-info',
+      component: () => import('@/views/form/step-form/info'),
+      meta: { title: 'route.stepFormInfo' }
+    }]
   }, {
     path: 'advanced-form',
     name: 'advanced-form',

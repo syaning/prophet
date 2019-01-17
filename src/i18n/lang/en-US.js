@@ -10,6 +10,7 @@ export default {
     form: 'Form',
     basicForm: 'Basic Form',
     stepForm: 'Step Form',
+    stepFormInfo: 'Step Form(write transfer information)',
     advancedForm: 'Advanced Form'
   },
 
@@ -58,6 +59,31 @@ export default {
       public: 'Public',
       partially_public: 'Partially public',
       private: 'Private'
+    }
+  },
+
+  stepForm: {
+    desc: '将一个冗长或用户不熟悉的表单任务分成多个步骤，指导用户完成。',
+    step1: '填写转账信息',
+    step2: '确认转账信息',
+    step3: '完成',
+    nextStep: 'Next Step',
+    prevStep: 'Prev Step',
+
+    payAccount: {
+      label: 'Pay Account'
+    },
+    receiverAccount: {
+      label: 'Receiver Account',
+      placeholder: 'test@example.com'
+    },
+    receiverName: {
+      label: 'Receiver Name',
+      placeholder: 'Please enter receiver name'
+    },
+    amount: {
+      label: 'Amount',
+      placeholder: 'Please enter amount'
     }
   }
 }
