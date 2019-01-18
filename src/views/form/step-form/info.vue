@@ -1,9 +1,5 @@
 <template>
-  <Form
-    :model="transaction"
-    laebl-position="right"
-    :label-width="120"
-    style="max-width: 500px; margin: 40px auto 0;">
+  <Form ref="form" :model="transaction" :rules="rules" :label-width="120">
     <FormItem :label="$t('stepForm.payAccount.label')" prop="payAccount">
       <Select v-model="transaction.payAccount">
         <Option v-for="account in accounts" :key="account" :value="account">
@@ -52,13 +48,23 @@ export default {
       accountTypes: [
         { name: 'Alipay', value: 'alipay' },
         { name: 'Bank', value: 'bank' }
-      ]
+      ],
+      rules: {
+        payAccount: [{ required: true, message: 'Please select a pay account' }],
+        receiverAccount: [{ required: true, message: 'Please enter receiver account' }],
+        receiverName: [{ required: true, message: 'Please enter receiver name' }],
+        amount: [{ required: true, message: 'Please enter amount' }]
+      }
     }
   },
 
   methods: {
     nextStep() {
-      // ...
+      this.$refs.form.validate(valid => {
+        if (valid) {
+          this.$emit('next')
+        }
+      })
     }
   }
 }

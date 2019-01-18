@@ -11,6 +11,8 @@ export default {
     basicForm: 'Basic Form',
     stepForm: 'Step Form',
     stepFormInfo: 'Step Form(write transfer information)',
+    stepFormConfirm: 'Step Form(confirm transfer information)',
+    stepFormResult: 'Step Form(finished)',
     advancedForm: 'Advanced Form'
   },
 
@@ -69,6 +71,7 @@ export default {
     step3: '完成',
     nextStep: 'Next Step',
     prevStep: 'Prev Step',
+    submit: 'Submit',
 
     payAccount: {
       label: 'Pay Account'
@@ -84,6 +87,11 @@ export default {
     amount: {
       label: 'Amount',
       placeholder: 'Please enter amount'
+    },
+    password: {
+      label: 'Password',
+      placeholder: 'Please enter password',
+      message: 'Password is required'
     }
   }
 }

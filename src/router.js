@@ -50,6 +50,16 @@ export const menus = [{
       name: 'step-form-info',
       component: () => import('@/views/form/step-form/info'),
       meta: { title: 'route.stepFormInfo' }
+    }, {
+      path: 'confirm',
+      name: 'step-form-confirm',
+      component: () => import('@/views/form/step-form/confirm'),
+      meta: { title: 'route.stepFormConfirm' }
+    }, {
+      path: 'result',
+      name: 'step-form-result',
+      component: () => import('@/views/form/step-form/result'),
+      meta: { title: 'route.stepFormResult' }
     }]
   }, {
     path: 'advanced-form',

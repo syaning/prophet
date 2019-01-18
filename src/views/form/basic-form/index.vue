@@ -2,17 +2,17 @@
   <div>
     <page-header :title="$t('route.basicForm')" :desc="$t('basicForm.desc')"></page-header>
     <Card dis-hover :bordered="false">
-      <Form ref="form" :model="form" :rules="rules" laebl-position="right" :label-width="250" style="max-width: 750px;">
-        <FormItem :label="$t('basicForm.title.label')" prop="title" required>
+      <Form ref="form" :model="form" :rules="rules" :label-width="250" style="max-width: 750px;">
+        <FormItem :label="$t('basicForm.title.label')" prop="title">
           <Input v-model="form.title" :placeholder="$t('basicForm.title.placeholder')" />
         </FormItem>
-        <FormItem :label="$t('basicForm.date.label')" prop="date" required>
+        <FormItem :label="$t('basicForm.date.label')" prop="date">
           <DatePicker v-model="form.date" type="daterange" :placeholder="$t('basicForm.date.placeholder')" style="width: 100%;"></DatePicker>
         </FormItem>
-        <FormItem :label="$t('basicForm.goal.label')" prop="goal" required>
+        <FormItem :label="$t('basicForm.goal.label')" prop="goal">
           <Input v-model="form.goal" type="textarea" :placeholder="$t('basicForm.goal.placeholder')" :rows="4" />
         </FormItem>
-        <FormItem :label="$t('basicForm.metrics.label')" prop="metrics" required>
+        <FormItem :label="$t('basicForm.metrics.label')" prop="metrics">
           <Input v-model="form.metrics" type="textarea" :placeholder="$t('basicForm.metrics.placeholder')" :rows="4" />
         </FormItem>
         <FormItem :label="$t('basicForm.client.label')" prop="client">
@@ -73,6 +73,7 @@ export default {
       rules: {
         title: [{ required: true, message: this.$t('basicForm.title.message') }],
         date: [{
+          required: true,
           validator: (rule, value, callback) => {
             if (value.length === 2 && value[0] && value[1]) {
               callback()

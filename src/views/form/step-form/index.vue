@@ -12,7 +12,12 @@
         <Step :title="$t('stepForm.step3')"></Step>
       </Steps>
 
-      <router-view :transaction="transaction"></router-view>
+      <router-view
+        :transaction="transaction"
+        @prev="prevStep"
+        @next="nextStep"
+        style="max-width: 500px; margin: 40px auto 0;">
+      </router-view>
     </Card>
   </div>
 </template>
@@ -25,13 +30,39 @@ export default {
 
   data() {
     return {
-      currentStep: 1,
       transaction: {
         payAccount: 'alice@example.com',
         receiverAccountType: 'alipay',
         receiverAccount: 'test@example.com',
         receiverName: 'Alex',
         amount: 500
+      }
+    }
+  },
+
+  computed: {
+    currentStep() {
+      const steps = [
+        'step-form-info',
+        'step-form-confirm',
+        'step-form-result'
+      ]
+      return steps.indexOf(this.$route.name) + 1
+    }
+  },
+
+  methods: {
+    prevStep() {
+      if (this.currentStep === 2) {
+        this.$router.push({ name: 'step-form-info' })
+      }
+    },
+
+    nextStep() {
+      if (this.currentStep === 1) {
+        this.$router.push({ name: 'step-form-confirm' })
+      } else if (this.currentStep === 2) {
+        this.$router.push({ name: 'step-form-result' })
       }
     }
   }
