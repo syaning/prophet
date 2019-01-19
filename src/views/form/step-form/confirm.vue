@@ -4,7 +4,7 @@
       确认转账后，资金将直接打入对方账户，无法退回。
     </Alert>
 
-    <Form class="step-form-confirm" :label-width="120">
+    <Form class="step-form-confirm" :label-width="150">
       <FormItem :label="$t('stepForm.payAccount.label')">
         <span>{{ transaction.payAccount }}</span>
       </FormItem>

@@ -1,5 +1,5 @@
 <template>
-  <Form ref="form" :model="transaction" :rules="rules" :label-width="120">
+  <Form ref="form" :model="transaction" :rules="rules" :label-width="150">
     <FormItem :label="$t('stepForm.payAccount.label')" prop="payAccount">
       <Select v-model="transaction.payAccount">
         <Option v-for="account in accounts" :key="account" :value="account">
