@@ -9,7 +9,11 @@
     </Sider>
 
     <Layout>
-      <Header class="prophet-header">header</Header>
+      <Header class="prophet-header">
+        <div style="float: right;">
+          <lang-select></lang-select>
+        </div>
+      </Header>
       <Content class="prophet-content">
         <transition name="fade-transform" mode="out-in">
           <router-view></router-view>
@@ -25,9 +29,13 @@
 
 <script>
 import Menubar from './Menubar'
+import LangSelect from '@/components/lang-select'
 
 export default {
-  components: { Menubar }
+  components: {
+    Menubar,
+    LangSelect
+  }
 }
 </script>
 
@@ -61,6 +69,7 @@ export default {
 }
 
 .prophet-header {
+  padding: 0 20px;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
 }
