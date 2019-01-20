@@ -22,13 +22,17 @@
       </FormItem>
       <FormItem :label="$t('stepForm.amount.label')">
         <span>{{ transaction.amount }}</span>
-        <span>元</span>
+        <span style="margin-left: 5px;">{{ $t('stepForm.amount.rmb') }}</span>
       </FormItem>
     </Form>
 
     <div class="step-form-result-actions">
-      <Button type="primary" @click="createTransaction">再转一笔</Button>
-      <Button style="margin-left: 8px;">查看账单</Button>
+      <Button type="primary" @click="createTransaction">
+        {{ $t('stepForm.continueTransfer') }}
+      </Button>
+      <Button style="margin-left: 8px;">
+        {{ $t('stepForm.checkBill') }}
+      </Button>
     </div>
   </div>
 </template>

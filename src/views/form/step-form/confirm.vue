@@ -1,7 +1,7 @@
 <template>
   <div>
     <Alert show-icon closable>
-      确认转账后，资金将直接打入对方账户，无法退回。
+      {{ $t('stepForm.confirm') }}
     </Alert>
 
     <Form class="step-form-confirm" :label-width="150">
@@ -16,7 +16,7 @@
       </FormItem>
       <FormItem :label="$t('stepForm.amount.label')">
         <span>{{ transaction.amount }}</span>
-        <span>（人民币伍佰元整）</span>
+        <span style="margin-left: 5px;">{{ $t('stepForm.amount.rmb') }}</span>
       </FormItem>
     </Form>
 

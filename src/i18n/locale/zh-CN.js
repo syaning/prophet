@@ -72,6 +72,9 @@ export default {
     nextStep: '下一步',
     prevStep: '上一步',
     submit: '提交',
+    continueTransfer: '再转一笔',
+    checkBill: '查看账单',
+    confirm: '确认转账后，资金将直接打入对方账户，无法退回。',
 
     payAccount: {
       label: '付款账户',
@@ -92,7 +95,8 @@ export default {
     amount: {
       label: '转账金额',
       placeholder: '请输入转账金额',
-      message: '请输入转账金额'
+      message: '请输入转账金额',
+      rmb: '元'
     },
     password: {
       label: '支付密码',

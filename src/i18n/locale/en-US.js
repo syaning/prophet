@@ -65,7 +65,6 @@ export default {
   },
 
   stepForm: {
-    // desc: '将一个冗长或用户不熟悉的表单任务分成多个步骤，指导用户完成。',
     desc: 'Split a form into multiple steps to guide users.',
     step1: 'Write transfer information',
     step2: 'Confirm transfer information',
@@ -73,6 +72,9 @@ export default {
     nextStep: 'Next Step',
     prevStep: 'Prev Step',
     submit: 'Submit',
+    continueTransfer: 'Continue Transfer',
+    checkBill: 'Check Bill',
+    confirm: 'Please check the transfer information.',
 
     payAccount: {
       label: 'Pay Account',
@@ -93,7 +95,8 @@ export default {
     amount: {
       label: 'Amount',
       placeholder: 'Please enter amount',
-      message: 'Please enter amount'
+      message: 'Please enter amount',
+      rmb: '(CNY)'
     },
     password: {
       label: 'Password',
