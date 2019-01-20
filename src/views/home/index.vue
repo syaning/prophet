@@ -1,15 +1,24 @@
 <template>
   <Layout>
-    <Sider class="prophet-sider" :width="256">
+    <Sider
+      class="prophet-sider"
+      :width="256"
+      collapsible
+      :collapsed-width="80"
+      hide-trigger
+      v-model="collapsed">
       <div class="prophet-logo">
         <img src="@/assets/logo.png">
-        <h1>Prophet</h1>
+        <h1 v-show="!collapsed">Prophet</h1>
       </div>
-      <menubar></menubar>
+      <menubar :collapsed="collapsed"></menubar>
     </Sider>
 
     <Layout>
       <Header class="prophet-header">
+        <span class="prophet-menubar-trigger" @click="toggleCollapsed">
+          <Icon type="md-menu" size="24" />
+        </span>
         <div style="float: right;">
           <lang-select></lang-select>
         </div>
@@ -35,6 +44,18 @@ export default {
   components: {
     Menubar,
     LangSelect
+  },
+
+  data() {
+    return {
+      collapsed: false
+    }
+  },
+
+  methods: {
+    toggleCollapsed() {
+      this.collapsed = !this.collapsed
+    }
   }
 }
 </script>
@@ -42,7 +63,6 @@ export default {
 <style lang="less">
 .prophet-sider {
   min-height: 100vh;
-  background: #001529;
   box-shadow: 2px 0 6px rgba(0,21,41,.35);
 }
 
@@ -55,7 +75,8 @@ export default {
   img {
     display: inline-block;
     vertical-align: middle;
-    height: 36px;
+    width: 32px;
+    height: 32px;
   }
 
   h1 {
@@ -69,9 +90,19 @@ export default {
 }
 
 .prophet-header {
-  padding: 0 20px;
+  padding: 0 20px 0 0;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
+}
+
+.prophet-menubar-trigger {
+  display: inline-block;
+  padding: 0 20px;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(0,0,0,.025);
+  }
 }
 
 .prophet-content {

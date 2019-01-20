@@ -1,36 +1,61 @@
 <template>
-  <Menu
-    class="prophet-menubar"
-    theme="dark"
-    width="auto"
-    accordion
-    :active-name="activeName"
-    :open-names="openNames">
+  <div style="padding: 16px 0;">
+    <Menu
+      v-if="!collapsed"
+      :theme="theme"
+      width="auto"
+      accordion
+      :active-name="activeName"
+      :open-names="openNames">
+      <Submenu v-for="menu in menus" :key="menu.name" :name="menu.name">
+        <template slot="title">
+          <Icon :type="menu.meta.icon" />
+          {{ $t(menu.meta.title) }}
+        </template>
+        <router-link v-for="item in menu.children" :key="item.name" :to="{name: item.name}">
+          <MenuItem :name="item.name">
+            {{ $t(item.meta.title) }}
+          </MenuItem>
+        </router-link>
+      </Submenu>
+    </Menu>
 
-    <Submenu v-for="menu in menus" :key="menu.name" :name="menu.name">
-      <template slot="title">
-        <Icon :type="menu.meta.icon" />
-        {{ $t(menu.meta.title) }}
-      </template>
-      <router-link
-        v-for="item in menu.children"
-        :key="item.name"
-        :to="{name: item.name}">
-        <MenuItem :name="item.name">
-          {{ $t(item.meta.title) }}
-        </MenuItem>
-      </router-link>
-    </Submenu>
-  </Menu>
+    <Menu v-else :theme="theme" width="auto" class="prophet-menubar-collapsed">
+      <MenuItem
+        v-for="menu in menus"
+        :key="menu.name"
+        :name="menu.name"
+        :class="{'collapsed-active-item': collapsedActiveName === menu.name}">
+        <Dropdown placement="right-start">
+          <Icon :type="menu.meta.icon" size="16" />
+          <DropdownMenu slot="list">
+            <router-link v-for="item in menu.children" :key="item.name" :to="{name: item.name}">
+              <DropdownItem :class="{ 'collapsed-active-dropdown-item': item.name === activeName }">
+                {{ $t(item.meta.title) }}
+              </DropdownItem>
+            </router-link>
+          </DropdownMenu>
+        </Dropdown>
+      </MenuItem>
+    </Menu>
+  </div>
 </template>
 
 <script>
 import { menus } from '@/router'
 
 export default {
+  props: {
+    collapsed: {
+      type: Boolean,
+      required: true
+    }
+  },
+
   data() {
     return {
-      menus
+      menus,
+      theme: 'dark'
     }
   },
 
@@ -55,6 +80,10 @@ export default {
       return ''
     },
 
+    collapsedActiveName() {
+      return this.openNames.length ? this.openNames[0] : ''
+    },
+
     openNames() {
       const matched = this.$route.matched
       for (let match of matched) {
@@ -69,22 +98,56 @@ export default {
 </script>
 
 <style lang="less">
-.ivu-menu-dark.prophet-menubar {
-  background: #001529;
-  margin: 16px 0;
+@import "../../styles/index.less";
 
-  .ivu-menu-submenu {
-    .ivu-menu-submenu-title:hover {
-      color: #fff;
-      background: #001529;
+.prophet-menubar-collapsed {
+  .ivu-menu-item {
+    padding: 0;
+
+    &-active,
+    &-selected {
+      color: @menu-dark-subsidiary-color !important;
     }
-  }
 
-  .ivu-menu-opened {
-    background: #000c17;
+    &.collapsed-active-item {
+      color: #fff !important;
+    }
 
-    .ivu-menu-submenu-title {
-      background: #001529;
+    .ivu-dropdown {
+      height: 40px;
+      line-height: 40px;
+      margin: 4px 0;
+
+      i {
+        padding: 0 32px;
+      }
+
+      .ivu-select-dropdown {
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
+
+        .ivu-dropdown-menu {
+          background: @menu-dark-title;
+          padding: 4px 0;
+          margin-left: 3px;
+          border-radius: 4px;
+
+          .ivu-dropdown-item {
+            background: transparent;
+            color: @menu-dark-subsidiary-color;
+            cursor: pointer;
+
+            &:hover {
+              color: #fff;
+            }
+
+            &.collapsed-active-dropdown-item {
+              background: @primary-color;
+            }
+          }
+        }
+      }
     }
   }
 }
