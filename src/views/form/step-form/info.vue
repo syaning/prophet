@@ -44,16 +44,35 @@ export default {
       accounts: [
         'alice@example.com',
         'bob@example.com'
-      ],
-      accountTypes: [
-        { name: 'Alipay', value: 'alipay' },
-        { name: 'Bank', value: 'bank' }
-      ],
-      rules: {
-        payAccount: [{ required: true, message: 'Please select a pay account' }],
-        receiverAccount: [{ required: true, message: 'Please enter receiver account' }],
-        receiverName: [{ required: true, message: 'Please enter receiver name' }],
-        amount: [{ required: true, message: 'Please enter amount' }]
+      ]
+    }
+  },
+
+  computed: {
+    accountTypes() {
+      return [{
+        name: this.$t('stepForm.receiverAccount.alipay'),
+        value: 'alipay'
+      }, {
+        name: this.$t('stepForm.receiverAccount.bank'),
+        value: 'bank'
+      }]
+    },
+
+    rules() {
+      return {
+        payAccount: [
+          { required: true, message: this.$t('stepForm.payAccount.message') }
+        ],
+        receiverAccount: [
+          { required: true, message: this.$t('stepForm.receiverAccount.message') }
+        ],
+        receiverName: [
+          { required: true, message: this.$t('stepForm.receiverName.message') }
+        ],
+        amount: [
+          { required: true, message: this.$t('stepForm.amount.message') }
+        ]
       }
     }
   },

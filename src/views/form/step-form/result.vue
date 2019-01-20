@@ -2,8 +2,12 @@
   <div class="step-form-result">
     <div style="text-align: center;">
       <Icon class="step-form-result-icon" type="ios-checkmark-circle" size="72" color="#52c41a" />
-      <p class="step-form-result-title">操作成功</p>
-      <p class="step-form-result-desc">预计两小时内到账</p>
+      <p class="step-form-result-title">
+        {{ $t('stepForm.result.success') }}
+      </p>
+      <p class="step-form-result-desc">
+        {{ $t('stepForm.result.desc') }}
+      </p>
     </div>
 
     <Form class="step-form-result-extra" :label-width="150">
