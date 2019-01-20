@@ -137,6 +137,9 @@ export default {
             background: transparent;
             color: @menu-dark-subsidiary-color;
             cursor: pointer;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 16px;
 
             &:hover {
               color: #fff;
