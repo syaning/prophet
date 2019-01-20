@@ -1,7 +1,7 @@
 <template>
   <div style="padding: 16px 0;">
     <Menu
-      v-if="!collapsed"
+      v-show="!collapsed"
       :theme="theme"
       width="auto"
       accordion
@@ -20,7 +20,11 @@
       </Submenu>
     </Menu>
 
-    <Menu v-else :theme="theme" width="auto" class="prophet-menubar-collapsed">
+    <Menu
+      v-show="collapsed"
+      :theme="theme"
+      width="auto"
+      class="prophet-menubar-collapsed">
       <MenuItem
         v-for="menu in menus"
         :key="menu.name"
@@ -106,6 +110,7 @@ export default {
 
     &-active,
     &-selected {
+      background: @menu-dark-title !important;
       color: @menu-dark-subsidiary-color !important;
     }
 
@@ -128,10 +133,11 @@ export default {
         background: transparent;
 
         .ivu-dropdown-menu {
-          background: @menu-dark-title;
+          width: 160px;
           padding: 4px 0;
-          margin-left: 3px;
+          margin-left: 2px;
           border-radius: 4px;
+          background: @menu-dark-title;
 
           .ivu-dropdown-item {
             background: transparent;
