@@ -7,6 +7,12 @@ const app = {
     locale: localStorage.getItem(LOCALE_KEY) || window.navigator.language
   },
 
+  getters: {
+    locale(state) {
+      return state.locale
+    }
+  },
+
   mutations: {
     SET_LOCALE(state, locale) {
       state.locale = locale
