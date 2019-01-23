@@ -6,7 +6,7 @@
     </page-header>
 
     <Card dis-hover :bordered="false" title="仓库管理">
-      <Form :model="warehouse">
+      <Form ref="warehouseForm" :model="warehouse">
         <Row :gutter="16">
           <Col :xs="24" :sm="12" :md="6">
             <FormItem label="仓库名">
@@ -61,7 +61,7 @@
     </Card>
 
     <Card dis-hover :bordered="false" title="任务管理" style="margin-top: 20px;">
-      <Form :model="task">
+      <Form ref="taskForm" :model="task">
         <Row :gutter="16">
           <Col :xs="24" :sm="12" :md="6">
             <FormItem label="任务名">
@@ -112,7 +112,12 @@
     </Card>
 
     <Card dis-hover :bordered="false" title="成员管理" style="margin-top: 20px;">
+      <Table :columns="columns" :data="employees"></Table>
     </Card>
+
+    <div class="advanced-form-toolbar">
+      <Button type="primary" @click="submit">提交</Button>
+    </div>
   </div>
 </template>
 
@@ -147,8 +152,44 @@ export default {
       types: [
         { value: 'private', text: '私密' },
         { value: 'public', text: '公开' }
+      ],
+      employees: [
+        { name: 'John Brown', id: '00001', dept: 'New York No. 1 Lake Park' },
+        { name: 'Jim Green', id: '00002', dept: 'London No. 1 Lake Park' },
+        { name: 'Joe Black', id: '00003', dept: 'Sidney No. 1 Lake Park' }
+      ],
+      columns: [
+        { title: '成员姓名', key: 'name' },
+        { title: '工号', key: 'id' },
+        { title: '所属部门', key: 'dept' },
+        { title: '操作', key: '' }
       ]
+    }
+  },
+
+  methods: {
+    submit() {
+      // ...
     }
   }
 }
 </script>
+
+<style lang="less">
+.advanced-form-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+  padding: 0 24px;
+  background: #fff;
+  box-shadow: 0 -1px 2px rgba(0,0,0,.03);
+  border-top: 1px solid #e8e8e8;
+  z-index: 0;
+}
+</style>
