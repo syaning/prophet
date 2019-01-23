@@ -67,6 +67,23 @@ export const menus = [{
     component: () => import('@/views/form/advanced-form'),
     meta: { title: 'route.advancedForm' }
   }]
+}, {
+  path: '/account',
+  name: 'account',
+  redirect: '/account/center',
+  component: ViewWrapper,
+  meta: { title: 'route.account', icon: 'md-person' },
+  children: [{
+    path: 'center',
+    name: 'account-center',
+    component: () => import('@/views/account/center'),
+    meta: { title: 'route.accountCenter' }
+  }, {
+    path: 'settings',
+    name: 'account-settings',
+    component: () => import('@/views/account/settings'),
+    meta: { title: 'route.accountSettings' }
+  }]
 }]
 
 const router = new Router({

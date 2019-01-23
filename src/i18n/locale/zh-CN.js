@@ -13,7 +13,11 @@ export default {
     stepFormInfo: '分步表单（填写转账信息）',
     stepFormConfirm: '分步表单（确认转账信息）',
     stepFormResult: '分步表单（完成）',
-    advancedForm: '高级表单'
+    advancedForm: '高级表单',
+
+    account: '个人页',
+    accountCenter: '个人中心',
+    accountSettings: '个人设置'
   },
 
   basicForm: {

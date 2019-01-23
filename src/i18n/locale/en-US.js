@@ -13,7 +13,11 @@ export default {
     stepFormInfo: 'Step Form(write transfer information)',
     stepFormConfirm: 'Step Form(confirm transfer information)',
     stepFormResult: 'Step Form(finished)',
-    advancedForm: 'Advanced Form'
+    advancedForm: 'Advanced Form',
+
+    account: 'Account',
+    accountCenter: 'Account Center',
+    accountSettings: 'Account Settings'
   },
 
   basicForm: {
