@@ -15,6 +15,10 @@ export default {
     stepFormResult: 'Step Form(finished)',
     advancedForm: 'Advanced Form',
 
+    result: 'Result',
+    resultSuccess: 'Success',
+    resultFail: 'Fail',
+
     account: 'Account',
     accountCenter: 'Account Center',
     accountSettings: 'Account Settings'

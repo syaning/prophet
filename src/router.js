@@ -68,6 +68,23 @@ export const menus = [{
     meta: { title: 'route.advancedForm' }
   }]
 }, {
+  path: '/result',
+  name: 'result',
+  redirect: '/result/success',
+  component: ViewWrapper,
+  meta: { title: 'route.result', icon: 'md-checkmark-circle-outline' },
+  children: [{
+    path: 'success',
+    name: 'result-success',
+    component: () => import('@/views/result/success'),
+    meta: { title: 'route.resultSuccess' }
+  }, {
+    path: 'fail',
+    name: 'result-fail',
+    component: () => import('@/views/result/fail'),
+    meta: { title: 'route.resultFail' }
+  }]
+}, {
   path: '/account',
   name: 'account',
   redirect: '/account/center',

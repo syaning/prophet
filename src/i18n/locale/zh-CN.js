@@ -15,6 +15,10 @@ export default {
     stepFormResult: '分步表单（完成）',
     advancedForm: '高级表单',
 
+    result: '结果页',
+    resultSuccess: '成功页',
+    resultFail: '失败页',
+
     account: '个人页',
     accountCenter: '个人中心',
     accountSettings: '个人设置'
