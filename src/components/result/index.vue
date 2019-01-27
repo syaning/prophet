@@ -4,10 +4,10 @@
       <Icon class="prophet-result-icon" :type="icon" :color="iconColor" />
       <div class="prophet-result-title">{{ title }}</div>
       <div class="prophet-result-desc">{{ desc }}</div>
-      <div class="prophet-result-extra">
+      <div class="prophet-result-extra" v-if="$slots.extra">
         <slot name="extra"></slot>
       </div>
-      <div class="prophet-result-actions">
+      <div class="prophet-result-actions" v-if="$slots.actions">
         <slot name="actions"></slot>
       </div>
     </div>
@@ -18,9 +18,8 @@
 export default {
   props: {
     type: {
-      type: String,
-      default: 'scucess',
-      validator: val => ['success', 'fail'].includes(val)
+      validator: val => ['success', 'fail'].includes(val),
+      default: 'scucess'
     },
 
     title: {
