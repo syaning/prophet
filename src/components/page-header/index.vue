@@ -5,8 +5,8 @@
         {{ $t(item.meta.title) }}
       </BreadcrumbItem>
     </Breadcrumb>
-    <h1 v-if="title">{{ title }}</h1>
-    <div v-if="desc">{{ desc }}</div>
+    <h1 v-if="title" class="page-header-title">{{ title }}</h1>
+    <div v-if="desc" class="page-header-desc">{{ desc }}</div>
   </div>
 </template>
 
@@ -36,14 +36,18 @@ export default {
   border-bottom: 1px solid #e8e8e8;
   margin: -22px -24px 24px -24px;
 
-  h1 {
-    font-size: 20px;
-    font-weight: 500;
-    margin: 16px 0;
-  }
-
   &-breadcrumb > span:last-child {
     font-weight: 400;
+  }
+
+  &-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 16px;
+  }
+
+  &-desc {
+    margin-top: 16px;
   }
 }
 </style>

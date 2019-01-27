@@ -14,6 +14,10 @@ export default {
   stepFormResult: 'Step Form(finished)',
   advancedForm: 'Advanced Form',
 
+  profile: 'Profile',
+  basicProfile: 'Basic Profile',
+  advancedProfile: 'Advanced Profile',
+
   result: 'Result',
   resultSuccess: 'Success',
   resultFail: 'Fail',
