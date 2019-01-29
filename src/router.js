@@ -122,6 +122,10 @@ const router = new Router({
     component: Home,
     meta: { title: 'route.home' },
     children: menus
+  }, {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/login')
   }]
 })
 

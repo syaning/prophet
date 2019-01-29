@@ -1,13 +1,13 @@
 <template>
   <Card dis-hover :bordered="false">
-    <div class="prophet-result">
-      <Icon class="prophet-result-icon" :type="icon" :color="iconColor" />
-      <div class="prophet-result-title">{{ title }}</div>
-      <div class="prophet-result-desc">{{ desc }}</div>
-      <div class="prophet-result-extra" v-if="$slots.extra">
+    <div :class="prefixCls">
+      <Icon :class="iconClasses" :type="icon" :color="iconColor" />
+      <div :class="titleClasses">{{ title }}</div>
+      <div :class="descClasses">{{ desc }}</div>
+      <div :class="extraClasses" v-if="$slots.extra">
         <slot name="extra"></slot>
       </div>
-      <div class="prophet-result-actions" v-if="$slots.actions">
+      <div :class="actionsClasses" v-if="$slots.actions">
         <slot name="actions"></slot>
       </div>
     </div>
@@ -15,6 +15,8 @@
 </template>
 
 <script>
+const prefixCls = 'prophet-result'
+
 export default {
   props: {
     type: {
@@ -33,7 +35,33 @@ export default {
     }
   },
 
+  data() {
+    return {
+      prefixCls
+    }
+  },
+
   computed: {
+    iconClasses() {
+      return `${prefixCls}-icon`
+    },
+
+    titleClasses() {
+      return `${prefixCls}-title`
+    },
+
+    descClasses() {
+      return `${prefixCls}-desc`
+    },
+
+    extraClasses() {
+      return `${prefixCls}-extra`
+    },
+
+    actionsClasses() {
+      return `${prefixCls}-actions`
+    },
+
     icon() {
       return this.type === 'success' ? 'md-checkmark-circle' : 'md-close-circle'
     },

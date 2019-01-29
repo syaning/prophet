@@ -1,16 +1,18 @@
 <template>
-  <div class="page-header">
-    <Breadcrumb class="page-header-breadcrumb">
+  <div :class="prefixCls">
+    <Breadcrumb :class="breadcrumbClasses">
       <BreadcrumbItem v-for="item in items" :key="item.name">
         {{ $t(item.meta.title) }}
       </BreadcrumbItem>
     </Breadcrumb>
-    <h1 v-if="title" class="page-header-title">{{ title }}</h1>
-    <div v-if="desc" class="page-header-desc">{{ desc }}</div>
+    <h1 v-if="title" :class="titleClasses">{{ title }}</h1>
+    <div v-if="desc" :class="descClasses">{{ desc }}</div>
   </div>
 </template>
 
 <script>
+const prefixCls = 'prophet-page-header'
+
 export default {
   props: {
     title: {
@@ -21,7 +23,25 @@ export default {
     }
   },
 
+  data() {
+    return {
+      prefixCls
+    }
+  },
+
   computed: {
+    breadcrumbClasses() {
+      return `${prefixCls}-breadcrumb`
+    },
+
+    titleClasses() {
+      return `${prefixCls}-title`
+    },
+
+    descClasses() {
+      return `${prefixCls}-desc`
+    },
+
     items() {
       return this.$route.matched
     }
@@ -30,7 +50,7 @@ export default {
 </script>
 
 <style lang="less">
-.page-header {
+.prophet-page-header {
   background: #fff;
   padding: 16px 32px;
   border-bottom: 1px solid #e8e8e8;

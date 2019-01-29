@@ -1,14 +1,13 @@
 <template>
-  <div class="prophet-description-list">
-    <div class="prophet-description-list-title" v-if="title">
+  <div :class="prefixCls">
+    <div :class="titleClasses" v-if="title">
       {{ title }}
     </div>
     <Row :gutter="32">
-      <Col
-        class="prophet-description-list-item"
-        v-for="item in items" :key="item.key"
-        :xs="24" :sm="12" :md="8">
-        <span class="prophet-description-list-item-key">{{ item.key }}</span>
+      <Col :xs="24" :sm="12" :md="8"
+        :class="itemClasses"
+        v-for="item in items" :key="item.key">
+        <span :class="itemKeyClasses">{{ item.key }}</span>
         <span>{{ item.value }}</span>
       </Col>
     </Row>
@@ -16,6 +15,8 @@
 </template>
 
 <script>
+const prefixCls = 'prophet-description-list'
+
 export default {
   props: {
     title: {
@@ -25,6 +26,26 @@ export default {
     items: {
       type: Array,
       required: true
+    }
+  },
+
+  data() {
+    return {
+      prefixCls
+    }
+  },
+
+  computed: {
+    titleClasses() {
+      return `${prefixCls}-title`
+    },
+
+    itemClasses() {
+      return `${prefixCls}-item`
+    },
+
+    itemKeyClasses() {
+      return `${prefixCls}-item-key`
     }
   }
 }

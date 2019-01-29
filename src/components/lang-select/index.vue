@@ -1,10 +1,7 @@
 <template>
-  <Dropdown @on-click="setLocale" placement="bottom-end">
+  <Dropdown :class="prefixCls" placement="bottom-end" @on-click="setLocale">
     <a href="javascript:void(0)">
-      <Icon
-        class="lang-select-icon"
-        type="ios-globe-outline"
-        color="rgba(0,0,0,.65)" />
+      <Icon :class="iconClasses" type="ios-globe-outline" />
     </a>
     <DropdownMenu slot="list">
       <DropdownItem
@@ -21,9 +18,12 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
+const prefixCls = 'prophet-lang-select'
+
 export default {
   data() {
     return {
+      prefixCls,
       langs: [
         { locale: 'zh-CN', name: '简体中文' },
         { locale: 'en-US', name: 'English' }
@@ -32,7 +32,11 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['locale'])
+    ...mapGetters(['locale']),
+
+    iconClasses() {
+      return `${prefixCls}-icon`
+    }
   },
 
   methods: {
@@ -41,10 +45,13 @@ export default {
 }
 </script>
 
-<style>
-.lang-select-icon {
-  cursor: pointer;
-  padding: 0 10px;
-  font-size: 16px;
+<style lang="less">
+.prophet-lang-select {
+  &-icon {
+    padding: 0 10px;
+    font-size: 16px;
+    color: rgba(0,0,0,.65);
+    cursor: pointer;
+  }
 }
 </style>

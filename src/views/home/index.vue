@@ -28,10 +28,7 @@
           <router-view></router-view>
         </transition>
       </Content>
-      <Footer class="prophet-footer">
-        <span style="vertical-align: middle;">Copyright &copy; 2018-2019</span>
-        <Icon type="logo-github" style="margin-left: 10px;" />
-      </Footer>
+      <global-footer></global-footer>
     </Layout>
   </Layout>
 </template>
@@ -39,11 +36,13 @@
 <script>
 import Menubar from './Menubar'
 import LangSelect from '@/components/lang-select'
+import GlobalFooter from '@/components/global-footer'
 
 export default {
   components: {
     Menubar,
-    LangSelect
+    LangSelect,
+    GlobalFooter
   },
 
   data() {
