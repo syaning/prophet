@@ -1,8 +1,8 @@
 <template>
   <div class="prophet-login">
-    <Tabs :animated="false">
+    <Tabs v-model="mode" :animated="false">
       <TabPane :label="$t('login.withCredentials')" name="credentials">
-        <Form :model="user" :rules="userRules">
+        <Form ref="credentials" :model="user" :rules="userRules">
           <FormItem prop="username">
             <Input prefix="ios-contact-outline" v-model="user.username"
               :placeholder="$t('login.username.placeholder')" />
@@ -15,7 +15,7 @@
       </TabPane>
 
       <TabPane :label="$t('login.withPhone')" name="phone">
-        <Form :model="phone">
+        <Form ref="phone" :model="phone" :rules="phoneRules">
           <FormItem prop="number">
             <Input prefix="ios-phone-portrait" v-model="phone.number"
               :placeholder="$t('login.phoneNumber.placeholder')" />
@@ -42,7 +42,7 @@
       <a href="" style="float: right;">
         {{ $t('login.forgotPass') }}
       </a>
-      <Button long type="primary" style="margin-top: 24px;">
+      <Button long type="primary" @click="login" style="margin-top: 24px;">
         {{ $t('login.login') }}
       </Button>
     </div>
@@ -62,6 +62,7 @@
 export default {
   data() {
     return {
+      mode: 'credentials',
       user: {
         username: '',
         password: ''
@@ -80,12 +81,27 @@ export default {
         username: [{ required: true, message: this.$t('login.username.message') }],
         password: [{ required: true, message: this.$t('login.password.message') }]
       }
+    },
+
+    phoneRules() {
+      return {
+        number: [{ required: true, message: this.$t('login.phoneNumber.message') }],
+        code: [{ required: true, message: this.$t('login.verificationCode.message') }]
+      }
     }
   },
 
   methods: {
     getCaptcha() {
       // ...
+    },
+
+    login() {
+      this.$refs[this.mode].validate(valid => {
+        if (valid) {
+          // login
+        }
+      })
     }
   }
 }

@@ -69,8 +69,13 @@ export default {
         opento: []
       },
       disclosures: ['public', 'partially_public', 'private'],
-      colleagues: ['Colleague A', 'Colleague B', 'Colleague C'],
-      rules: {
+      colleagues: ['Colleague A', 'Colleague B', 'Colleague C']
+    }
+  },
+
+  computed: {
+    rules() {
+      return {
         title: [{ required: true, message: this.$t('basicForm.title.message') }],
         date: [{
           required: true,
