@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import iView from 'iview'
 import Router from 'vue-router'
-import Home from './views/home'
+import BasicLayout from '@/layouts/basic-layout'
 import BlankLayout from '@/layouts/blank-layout'
 import UserLayout from '@/layouts/user-layout'
 
@@ -120,7 +120,7 @@ const router = new Router({
   routes: [{
     path: '/',
     name: 'home',
-    component: Home,
+    component: BasicLayout,
     meta: { title: 'route.home' },
     children: menus
   }, {

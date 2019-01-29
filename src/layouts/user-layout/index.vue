@@ -9,20 +9,10 @@
         <img src="@/assets/logo.png" />
         <h1>Prophet</h1>
       </div>
-      <router-view />
+      <router-view></router-view>
     </Content>
 
-    <global-footer>
-      <template slot="copyright">
-        <span style="vertical-align: middle;">
-          Copyright &copy; 2018-{{ year }} Alex Sun
-        </span>
-        <a href="https://github.com/syaning/prophet" target="_blank"
-          style="color: #515a6e; margin-left: 5px;">
-          <Icon type="logo-github" />
-        </a>
-      </template>
-    </global-footer>
+    <global-footer></global-footer>
   </Layout>
 </template>
 

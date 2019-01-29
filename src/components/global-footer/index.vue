@@ -1,16 +1,20 @@
 <template>
   <Footer class="prophet-global-footer">
-    <slot name="copyright">
-      <span v-if="copyright">{{ copyright }}</span>
-    </slot>
+    <span style="vertical-align: middle;">
+      Copyright &copy; 2018-{{ year }} Alex Sun
+    </span>
+    <a href="https://github.com/syaning/prophet" target="_blank"
+      style="color: #515a6e; margin-left: 5px;">
+      <Icon type="logo-github" />
+    </a>
   </Footer>
 </template>
 
 <script>
 export default {
-  props: {
-    copyright: {
-      type: String
+  data() {
+    return {
+      year: new Date().getFullYear()
     }
   }
 }

@@ -1,6 +1,7 @@
 <template>
-  <div style="padding: 16px 0;">
+  <div :class="prefixCls">
     <Menu
+      :class="expandClasses"
       v-show="!collapsed"
       :theme="theme"
       width="auto"
@@ -24,7 +25,7 @@
       v-show="collapsed"
       :theme="theme"
       width="auto"
-      class="prophet-menubar-collapsed">
+      :class="collapsedClasses">
       <MenuItem
         v-for="menu in menus"
         :key="menu.name"
@@ -48,6 +49,8 @@
 <script>
 import { menus } from '@/router'
 
+const prefixCls = 'prophet-menubar'
+
 export default {
   props: {
     collapsed: {
@@ -59,11 +62,20 @@ export default {
   data() {
     return {
       menus,
+      prefixCls,
       theme: 'dark'
     }
   },
 
   computed: {
+    expandClasses() {
+      return `${prefixCls}-expand`
+    },
+
+    collapsedClasses() {
+      return `${prefixCls}-collapsed`
+    },
+
     menuNames() {
       return this.menus.map(menu => menu.name)
     },
@@ -104,55 +116,59 @@ export default {
 <style lang="less">
 @import "../../styles/index.less";
 
-.prophet-menubar-collapsed {
-  .ivu-menu-item {
-    padding: 0;
+.prophet-menubar {
+  margin: 16px 0;
 
-    &-active,
-    &-selected {
-      background: @menu-dark-title !important;
-      color: @menu-dark-subsidiary-color !important;
-    }
+  &-collapsed {
+    .ivu-menu-item {
+      padding: 0;
 
-    &.collapsed-active-item {
-      color: #fff !important;
-    }
-
-    .ivu-dropdown {
-      height: 40px;
-      line-height: 40px;
-      margin: 4px 0;
-
-      i {
-        padding: 0 32px;
+      &-active,
+      &-selected {
+        background: @menu-dark-title !important;
+        color: @menu-dark-subsidiary-color !important;
       }
 
-      .ivu-select-dropdown {
-        padding: 0;
-        border-radius: 0;
-        background: transparent;
+      &.collapsed-active-item {
+        color: #fff !important;
+      }
 
-        .ivu-dropdown-menu {
-          width: 160px;
-          padding: 4px 0;
-          margin-left: 2px;
-          border-radius: 4px;
-          background: @menu-dark-title;
+      .ivu-dropdown {
+        height: 40px;
+        line-height: 40px;
+        margin: 4px 0;
 
-          .ivu-dropdown-item {
-            background: transparent;
-            color: @menu-dark-subsidiary-color;
-            cursor: pointer;
-            height: 40px;
-            line-height: 40px;
-            padding: 0 16px;
+        i {
+          padding: 0 32px;
+        }
 
-            &:hover {
-              color: #fff;
-            }
+        .ivu-select-dropdown {
+          padding: 0;
+          border-radius: 0;
+          background: transparent;
 
-            &.collapsed-active-dropdown-item {
-              background: @primary-color;
+          .ivu-dropdown-menu {
+            width: 160px;
+            padding: 4px 0;
+            margin-left: 2px;
+            border-radius: 4px;
+            background: @menu-dark-title;
+
+            .ivu-dropdown-item {
+              background: transparent;
+              color: @menu-dark-subsidiary-color;
+              cursor: pointer;
+              height: 40px;
+              line-height: 40px;
+              padding: 0 16px;
+
+              &:hover {
+                color: #fff;
+              }
+
+              &.collapsed-active-dropdown-item {
+                background: @primary-color;
+              }
             }
           }
         }
