@@ -51,7 +51,7 @@
       <Icon type="logo-github" />
       <Icon type="logo-facebook" />
       <Icon type="logo-twitter" />
-      <router-link :to="{ name: 'login' }" style="float: right;">
+      <router-link :to="{ name: 'register' }" style="float: right;">
         {{ $t('login.signUp') }}
       </router-link>
     </div>
