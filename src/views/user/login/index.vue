@@ -1,0 +1,129 @@
+<template>
+  <div class="prophet-login">
+    <Tabs :animated="false">
+      <TabPane :label="$t('login.withCredentials')" name="credentials">
+        <Form :model="user" :rules="userRules">
+          <FormItem prop="username">
+            <Input prefix="ios-contact-outline" v-model="user.username"
+              :placeholder="$t('login.username.placeholder')" />
+          </FormItem>
+          <FormItem prop="password">
+            <Input prefix="ios-lock-outline" v-model="user.password" type="password"
+              :placeholder="$t('login.password.placeholder')" />
+          </FormItem>
+        </Form>
+      </TabPane>
+
+      <TabPane :label="$t('login.withPhone')" name="phone">
+        <Form :model="phone">
+          <FormItem prop="number">
+            <Input prefix="ios-phone-portrait" v-model="phone.number"
+              :placeholder="$t('login.phoneNumber.placeholder')" />
+          </FormItem>
+          <FormItem prop="code">
+            <Row :gutter="8">
+              <Col :span="16">
+                <Input prefix="ios-mail-outline" v-model="phone.code"
+                  :placeholder="$t('login.verificationCode.placeholder')" />
+              </Col>
+              <Col :span="8">
+                <Button long>{{ $t('login.getCaptcha') }}</Button>
+              </Col>
+            </Row>
+          </FormItem>
+        </Form>
+      </TabPane>
+    </Tabs>
+
+    <div>
+      <Checkbox v-model="remember">
+        {{ $t('login.remember') }}
+       </Checkbox>
+      <a href="" style="float: right;">
+        {{ $t('login.forgotPass') }}
+      </a>
+      <Button long type="primary" style="margin-top: 24px;">
+        {{ $t('login.login') }}
+      </Button>
+    </div>
+    <div class="prophet-login-extra">
+      <span>{{ $t('login.signInWith') }}</span>
+      <Icon type="logo-github" />
+      <Icon type="logo-facebook" />
+      <Icon type="logo-twitter" />
+      <router-link :to="{ name: 'login' }" style="float: right;">
+        {{ $t('login.signUp') }}
+      </router-link>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      user: {
+        username: '',
+        password: ''
+      },
+      phone: {
+        number: '',
+        code: ''
+      },
+      remember: true
+    }
+  },
+
+  computed: {
+    userRules() {
+      return {
+        username: [{ required: true, message: this.$t('login.username.message') }],
+        password: [{ required: true, message: this.$t('login.password.message') }]
+      }
+    }
+  },
+
+  methods: {
+    getCaptcha() {
+      // ...
+    }
+  }
+}
+</script>
+
+<style lang="less">
+.prophet-login {
+  width: 360px;
+  padding: 0 5px;
+  margin: 0 auto;
+
+  .ivu-tabs-bar {
+    border-bottom: none;
+    margin-bottom: 24px;
+  }
+
+  .ivu-tabs-nav-scroll {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ivu-tabs-tab:last-child {
+    margin-right: 0;
+  }
+
+  &-extra {
+    margin-top: 24px;
+
+    i {
+      font-size: 16px;
+      margin-left: 8px;
+      color: rgba(0,0,0,.2);
+      cursor: pointer;
+
+      &:hover {
+        color: #2d8cf0;
+      }
+    }
+  }
+}
+</style>

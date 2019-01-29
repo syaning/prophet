@@ -2,7 +2,8 @@ import Vue from 'vue'
 import iView from 'iview'
 import Router from 'vue-router'
 import Home from './views/home'
-import ViewWrapper from './components/view-wrapper'
+import BlankLayout from '@/layouts/blank-layout'
+import UserLayout from '@/layouts/user-layout'
 
 Vue.use(Router)
 
@@ -10,7 +11,7 @@ export const menus = [{
   path: '/dashboard',
   name: 'dashboard',
   redirect: '/dashboard/analysis',
-  component: ViewWrapper,
+  component: BlankLayout,
   meta: { title: 'route.dashboard', icon: 'md-speedometer' },
   children: [{
     path: 'analysis',
@@ -32,7 +33,7 @@ export const menus = [{
   path: '/form',
   name: 'form',
   redirect: '/form/basic-form',
-  component: ViewWrapper,
+  component: BlankLayout,
   meta: { title: 'route.form', icon: 'md-create' },
   children: [{
     path: 'basic-form',
@@ -71,7 +72,7 @@ export const menus = [{
   path: '/profile',
   name: 'profile',
   redirect: '/result/basic',
-  component: ViewWrapper,
+  component: BlankLayout,
   meta: { title: 'route.profile', icon: 'md-list-box' },
   children: [{
     path: 'basic',
@@ -83,7 +84,7 @@ export const menus = [{
   path: '/result',
   name: 'result',
   redirect: '/result/success',
-  component: ViewWrapper,
+  component: BlankLayout,
   meta: { title: 'route.result', icon: 'md-checkmark-circle-outline' },
   children: [{
     path: 'success',
@@ -100,7 +101,7 @@ export const menus = [{
   path: '/account',
   name: 'account',
   redirect: '/account/center',
-  component: ViewWrapper,
+  component: BlankLayout,
   meta: { title: 'route.account', icon: 'md-person' },
   children: [{
     path: 'center',
@@ -123,9 +124,14 @@ const router = new Router({
     meta: { title: 'route.home' },
     children: menus
   }, {
-    path: '/login',
-    name: 'login',
-    component: () => import('@/views/login')
+    path: '/user',
+    name: 'user',
+    component: UserLayout,
+    children: [{
+      path: 'login',
+      name: 'login',
+      component: () => import('@/views/user/login')
+    }]
   }]
 })
 
