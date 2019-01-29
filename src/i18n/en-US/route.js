@@ -22,6 +22,11 @@ export default {
   resultSuccess: 'Success',
   resultFail: 'Fail',
 
+  exception: 'Exception',
+  exception403: '403',
+  exception404: '404',
+  exception500: '500',
+
   account: 'Account',
   accountCenter: 'Account Center',
   accountSettings: 'Account Settings'

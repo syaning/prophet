@@ -98,6 +98,28 @@ export const menus = [{
     meta: { title: 'route.resultFail' }
   }]
 }, {
+  path: '/exception',
+  name: 'exception',
+  redirect: '/exception/403',
+  component: BlankLayout,
+  meta: { title: 'route.exception', icon: 'md-warning' },
+  children: [{
+    path: '403',
+    name: 'exception-403',
+    component: () => import('@/views/exception/403'),
+    meta: { title: 'route.exception403' }
+  }, {
+    path: '404',
+    name: 'exception-404',
+    component: () => import('@/views/exception/404'),
+    meta: { title: 'route.exception404' }
+  }, {
+    path: '500',
+    name: 'exception-500',
+    component: () => import('@/views/exception/500'),
+    meta: { title: 'route.exception500' }
+  }]
+}, {
   path: '/account',
   name: 'account',
   redirect: '/account/center',

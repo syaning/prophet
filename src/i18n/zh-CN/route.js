@@ -22,6 +22,11 @@ export default {
   resultSuccess: '成功页',
   resultFail: '失败页',
 
+  exception: '异常页',
+  exception403: '403',
+  exception404: '404',
+  exception500: '500',
+
   account: '个人页',
   accountCenter: '个人中心',
   accountSettings: '个人设置'
