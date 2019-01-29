@@ -20,7 +20,7 @@
           <Icon type="md-menu" size="24" />
         </span>
         <div style="float: right;">
-          <lang-select></lang-select>
+          <select-lang></select-lang>
         </div>
       </Header>
       <Content class="prophet-content">
@@ -35,13 +35,13 @@
 
 <script>
 import Menubar from './Menubar'
-import LangSelect from '@/components/lang-select'
+import SelectLang from '@/components/select-lang'
 import GlobalFooter from '@/components/global-footer'
 
 export default {
   components: {
     Menubar,
-    LangSelect,
+    SelectLang,
     GlobalFooter
   },
 

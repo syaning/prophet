@@ -1,7 +1,7 @@
 <template>
   <Layout class="prophet-login">
     <Header class="header">
-      <lang-select style="float: right;"></lang-select>
+      <select-lang style="float: right;"></select-lang>
     </Header>
 
     <Content>
@@ -21,12 +21,12 @@
 
 <script>
 import GlobalFooter from '@/components/global-footer'
-import LangSelect from '@/components/lang-select'
+import SelectLang from '@/components/select-lang'
 
 export default {
   components: {
     GlobalFooter,
-    LangSelect
+    SelectLang
   },
 
   data() {

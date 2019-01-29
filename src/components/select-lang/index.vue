@@ -18,7 +18,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-const prefixCls = 'prophet-lang-select'
+const prefixCls = 'prophet-select-lang'
 
 export default {
   data() {
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="less">
-.prophet-lang-select {
+.prophet-select-lang {
   &-icon {
     padding: 0 10px;
     font-size: 16px;
