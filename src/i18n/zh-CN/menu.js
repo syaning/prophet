@@ -30,5 +30,9 @@ export default {
 
   account: '个人页',
   accountCenter: '个人中心',
-  accountSettings: '个人设置'
+  accountSettings: '个人设置',
+  basicSettings: '基本设置',
+  securitySettings: '安全设置',
+  accountBinding: '账号绑定',
+  messageNotification: '新消息通知'
 }

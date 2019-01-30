@@ -21,6 +21,39 @@ export default {
       /* webpackChunkName: "account-settings" */
       '@/views/account/settings'
     ),
-    meta: { title: 'menu.accountSettings' }
+    meta: { title: 'menu.accountSettings' },
+    children: [{
+      path: 'basic',
+      name: 'basic-settings',
+      component: () => import(
+        /* webpackChunkName: "basic-settings" */
+        '@/views/account/settings/basic'
+      ),
+      meta: { title: 'menu.basicSettings' }
+    }, {
+      path: 'security',
+      name: 'security-settings',
+      component: () => import(
+        /* webpackChunkName: "security-settings" */
+        '@/views/account/settings/security'
+      ),
+      meta: { title: 'menu.securitySettings' }
+    }, {
+      path: 'binding',
+      name: 'account-binding',
+      component: () => import(
+        /* webpackChunkName: "account-binding" */
+        '@/views/account/settings/binding'
+      ),
+      meta: { title: 'menu.accountBinding' }
+    }, {
+      path: 'notification',
+      name: 'message-notification',
+      component: () => import(
+        /* webpackChunkName: "message-notification" */
+        '@/views/account/settings/notification'
+      ),
+      meta: { title: 'menu.messageNotification' }
+    }]
   }]
 }

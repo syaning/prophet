@@ -30,5 +30,9 @@ export default {
 
   account: 'Account',
   accountCenter: 'Account Center',
-  accountSettings: 'Account Settings'
+  accountSettings: 'Account Settings',
+  basicSettings: 'Basic Settings',
+  securitySettings: 'Security Settings',
+  accountBinding: 'Account Binding',
+  messageNotification: 'New Message Notification'
 }
