@@ -1,5 +1,6 @@
 export default {
   home: 'Home',
+  logout: 'Logouot',
 
   dashboard: 'Dashboard',
   analysis: 'Analysis',

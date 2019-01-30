@@ -1,5 +1,6 @@
 export default {
   home: '首页',
+  logout: '退出登录',
 
   dashboard: 'Dashboard',
   analysis: '分析页',

@@ -20,6 +20,7 @@
           <Icon type="md-menu" size="24" />
         </span>
         <div style="float: right;">
+          <user-info></user-info>
           <select-lang></select-lang>
         </div>
       </Header>
@@ -37,6 +38,7 @@
 
 <script>
 import Menubar from '@/components/menubar'
+import UserInfo from '@/components/user-info'
 import SelectLang from '@/components/select-lang'
 import GlobalFooter from '@/components/global-footer'
 
@@ -45,6 +47,7 @@ const prefixCls = 'prophet-basic-layout'
 export default {
   components: {
     Menubar,
+    UserInfo,
     SelectLang,
     GlobalFooter
   },
