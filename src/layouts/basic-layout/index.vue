@@ -98,7 +98,7 @@ export default {
     height: 64px;
     line-height: 64px;
     background: #002140;
-    padding-left: 24px;
+    padding: 0 24px;
 
     img {
       display: inline-block;
