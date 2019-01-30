@@ -1,6 +1,7 @@
 <template>
   <div :class="prefixCls">
     <Menu
+      ref="menuExpand"
       :class="expandClasses"
       v-show="!collapsed"
       :theme="theme"
@@ -108,6 +109,12 @@ export default {
         }
       }
       return []
+    }
+  },
+
+  watch: {
+    openNames() {
+      this.$nextTick(this.$refs.menuExpand.updateOpened)
     }
   }
 }
