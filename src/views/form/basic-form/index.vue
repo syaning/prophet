@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-header :title="$t('route.basicForm')" :desc="$t('basicForm.desc')"></page-header>
+    <page-header :title="$t('menu.basicForm')" :desc="$t('basicForm.desc')"></page-header>
     <Card dis-hover :bordered="false">
       <Form ref="form" :model="form" :rules="rules" :label-width="250" style="max-width: 750px;">
         <FormItem :label="$t('basicForm.title.label')" prop="title">

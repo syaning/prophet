@@ -5,7 +5,7 @@ export default {
   name: 'dashboard',
   redirect: '/dashboard/analysis',
   component: BasicLayout,
-  meta: { title: 'route.dashboard', icon: 'md-speedometer' },
+  meta: { title: 'menu.dashboard', icon: 'md-speedometer' },
   children: [{
     path: 'analysis',
     name: 'analysis',
@@ -13,7 +13,7 @@ export default {
       /* webpackChunkName: "analysis" */
       '@/views/dashboard/analysis'
     ),
-    meta: { title: 'route.analysis' }
+    meta: { title: 'menu.analysis' }
   }, {
     path: 'monitor',
     name: 'monitor',
@@ -21,7 +21,7 @@ export default {
       /* webpackChunkName: "monitor" */
       '@/views/dashboard/monitor'
     ),
-    meta: { title: 'route.monitor' }
+    meta: { title: 'menu.monitor' }
   }, {
     path: 'workplace',
     name: 'workplace',
@@ -29,6 +29,6 @@ export default {
       /* webpackChunkName: "workplace" */
       '@/views/dashboard/workplace'
     ),
-    meta: { title: 'route.workplace' }
+    meta: { title: 'menu.workplace' }
   }]
 }

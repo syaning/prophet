@@ -5,7 +5,7 @@ export default {
   name: 'result',
   redirect: '/result/success',
   component: BasicLayout,
-  meta: { title: 'route.result', icon: 'md-checkmark-circle-outline' },
+  meta: { title: 'menu.result', icon: 'md-checkmark-circle-outline' },
   children: [{
     path: 'success',
     name: 'result-success',
@@ -13,7 +13,7 @@ export default {
       /* webpackChunkName: "result-success" */
       '@/views/result/success'
     ),
-    meta: { title: 'route.resultSuccess' }
+    meta: { title: 'menu.resultSuccess' }
   }, {
     path: 'fail',
     name: 'result-fail',
@@ -21,6 +21,6 @@ export default {
       /* webpackChunkName: "result-fail" */
       '@/views/result/fail'
     ),
-    meta: { title: 'route.resultFail' }
+    meta: { title: 'menu.resultFail' }
   }]
 }

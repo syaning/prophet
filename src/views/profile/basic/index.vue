@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-header :title="$t('route.basicProfile')"></page-header>
+    <page-header :title="$t('menu.basicProfile')"></page-header>
 
     <Card dis-hover :bordered="false">
       <description-list title="退款申请" :items="applyItems"></description-list>

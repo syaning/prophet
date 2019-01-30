@@ -5,7 +5,7 @@ export default {
   name: 'profile',
   redirect: '/result/basic',
   component: BasicLayout,
-  meta: { title: 'route.profile', icon: 'md-list-box' },
+  meta: { title: 'menu.profile', icon: 'md-list-box' },
   children: [{
     path: 'basic',
     name: 'basic-profile',
@@ -13,6 +13,6 @@ export default {
       /* webpackChunkName: "basic-profile" */
       '@/views/profile/basic'
     ),
-    meta: { title: 'route.basicProfile' }
+    meta: { title: 'menu.basicProfile' }
   }]
 }

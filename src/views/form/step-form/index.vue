@@ -1,7 +1,7 @@
 <template>
   <div>
     <page-header
-      :title="$t('route.stepForm')"
+      :title="$t('menu.stepForm')"
       :desc="$t('stepForm.desc')">
     </page-header>
 

@@ -5,7 +5,7 @@ export default {
   name: 'account',
   redirect: '/account/center',
   component: BasicLayout,
-  meta: { title: 'route.account', icon: 'md-person' },
+  meta: { title: 'menu.account', icon: 'md-person' },
   children: [{
     path: 'center',
     name: 'account-center',
@@ -13,7 +13,7 @@ export default {
       /* webpackChunkName: "account-center" */
       '@/views/account/center'
     ),
-    meta: { title: 'route.accountCenter' }
+    meta: { title: 'menu.accountCenter' }
   }, {
     path: 'settings',
     name: 'account-settings',
@@ -21,6 +21,6 @@ export default {
       /* webpackChunkName: "account-settings" */
       '@/views/account/settings'
     ),
-    meta: { title: 'route.accountSettings' }
+    meta: { title: 'menu.accountSettings' }
   }]
 }

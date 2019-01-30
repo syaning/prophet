@@ -5,7 +5,7 @@ export default {
   name: 'form',
   redirect: '/form/basic-form',
   component: BasicLayout,
-  meta: { title: 'route.form', icon: 'md-create' },
+  meta: { title: 'menu.form', icon: 'md-create' },
   children: [{
     path: 'basic-form',
     name: 'basic-form',
@@ -13,7 +13,7 @@ export default {
       /* webpackChunkName: "basic-form" */
       '@/views/form/basic-form'
     ),
-    meta: { title: 'route.basicForm' }
+    meta: { title: 'menu.basicForm' }
   }, {
     path: 'step-form',
     name: 'step-form',
@@ -22,7 +22,7 @@ export default {
       /* webpackChunkName: "step-form" */
       '@/views/form/step-form'
     ),
-    meta: { title: 'route.stepForm' },
+    meta: { title: 'menu.stepForm' },
     children: [{
       path: 'info',
       name: 'step-form-info',
@@ -30,7 +30,7 @@ export default {
         /* webpackChunkName: "step-form-info" */
         '@/views/form/step-form/info'
       ),
-      meta: { title: 'route.stepFormInfo' }
+      meta: { title: 'menu.stepFormInfo' }
     }, {
       path: 'confirm',
       name: 'step-form-confirm',
@@ -38,7 +38,7 @@ export default {
         /* webpackChunkName: "step-form-confirm" */
         '@/views/form/step-form/confirm'
       ),
-      meta: { title: 'route.stepFormConfirm' }
+      meta: { title: 'menu.stepFormConfirm' }
     }, {
       path: 'result',
       name: 'step-form-result',
@@ -46,7 +46,7 @@ export default {
         /* webpackChunkName: "step-form-result" */
         '@/views/form/step-form/result'
       ),
-      meta: { title: 'route.stepFormResult' }
+      meta: { title: 'menu.stepFormResult' }
     }]
   }, {
     path: 'advanced-form',
@@ -55,6 +55,6 @@ export default {
       /* webpackChunkName: "advanced-form" */
       '@/views/form/advanced-form'
     ),
-    meta: { title: 'route.advancedForm' }
+    meta: { title: 'menu.advancedForm' }
   }]
 }
