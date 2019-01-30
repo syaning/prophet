@@ -1,6 +1,6 @@
 <template>
   <div class="prophet-login">
-    <Tabs v-model="mode" :animated="false">
+    <Tabs v-model="mode" :animated="false" style="overflow: visible;">
       <TabPane :label="$t('login.withCredentials')" name="credentials">
         <Form ref="credentials" :model="user" :rules="userRules">
           <FormItem prop="username">
@@ -119,7 +119,6 @@ export default {
 <style lang="less">
 .prophet-login {
   width: 360px;
-  padding: 0 5px;
   margin: 0 auto;
 
   .ivu-tabs-bar {

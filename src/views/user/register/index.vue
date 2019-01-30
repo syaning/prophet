@@ -86,7 +86,6 @@ export default {
 <style lang="less">
 .prophet-register {
   width: 360px;
-  padding: 0 5px;
   margin: 0 auto;
 
   h3 {
