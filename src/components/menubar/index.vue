@@ -9,12 +9,17 @@
       accordion
       :active-name="activeName"
       :open-names="openNames">
+
       <Submenu v-for="menu in menus" :key="menu.name" :name="menu.name">
         <template slot="title">
           <Icon :type="menu.meta.icon" />
           {{ $t(menu.meta.title) }}
         </template>
-        <router-link v-for="item in menu.children" :key="item.name" :to="{name: item.name}">
+
+        <router-link
+          v-for="item in menu.children"
+          :key="item.name"
+          :to="{name: item.name}">
           <MenuItem :name="item.name">
             {{ $t(item.meta.title) }}
           </MenuItem>
@@ -35,8 +40,12 @@
         <Dropdown placement="right-start">
           <Icon :type="menu.meta.icon" size="16" />
           <DropdownMenu slot="list">
-            <router-link v-for="item in menu.children" :key="item.name" :to="{name: item.name}">
-              <DropdownItem :class="{ 'collapsed-active-dropdown-item': item.name === activeName }">
+            <router-link
+              v-for="item in menu.children"
+              :key="item.name"
+              :to="{name: item.name}">
+              <DropdownItem
+                :class="{ 'collapsed-active-dropdown-item': item.name === activeName }">
                 {{ $t(item.meta.title) }}
               </DropdownItem>
             </router-link>
