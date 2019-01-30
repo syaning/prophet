@@ -17,6 +17,7 @@ export default {
   }, {
     path: 'settings',
     name: 'account-settings',
+    redirect: 'settings/basic',
     component: () => import(
       /* webpackChunkName: "account-settings" */
       '@/views/account/settings'

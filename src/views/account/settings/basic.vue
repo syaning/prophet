@@ -1,3 +1,5 @@
 <template>
-  <div>{{ $t('menu.basicSettings') }}</div>
+  <div>
+    basic settings
+  </div>
 </template>
