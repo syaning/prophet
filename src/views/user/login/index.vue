@@ -59,6 +59,8 @@
 </template>
 
 <script>
+import api from '@/api'
+
 export default {
   data() {
     return {
@@ -99,7 +101,9 @@ export default {
     login() {
       this.$refs[this.mode].validate(valid => {
         if (valid) {
-          // login
+          api.user.login().then(res => {
+            console.log(res.data)
+          })
         }
       })
     }

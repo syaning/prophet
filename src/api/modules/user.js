@@ -1,5 +1,7 @@
+import request from '../request'
+
 export default {
-  login(data) {
-    // ...
+  login() {
+    return request.get('/api/users')
   }
 }
