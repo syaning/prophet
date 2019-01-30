@@ -27,5 +27,6 @@ export default {
   forgotPass: '忘记密码',
   login: '登录',
   signInWith: '其它方式登录',
-  signUp: '注册账户'
+  signUp: '注册账户',
+  loginFailed: '用户名或密码错误'
 }

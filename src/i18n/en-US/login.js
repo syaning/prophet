@@ -27,5 +27,6 @@ export default {
   forgotPass: 'Forgot your password?',
   login: 'Login',
   signInWith: 'Sign in with',
-  signUp: 'Sign up'
+  signUp: 'Sign up',
+  loginFailed: 'Incorrect username or password'
 }

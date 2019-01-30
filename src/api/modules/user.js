@@ -1,7 +1,11 @@
 import request from '../request'
 
 export default {
-  login() {
-    return request.get('/api/users')
+  login(data) {
+    return request.post('/api/user/login', data)
+  },
+
+  logout() {
+    return request.post('/api/user/logout')
   }
 }

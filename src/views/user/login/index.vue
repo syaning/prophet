@@ -42,7 +42,7 @@
       <a href="" style="float: right;">
         {{ $t('login.forgotPass') }}
       </a>
-      <Button long type="primary" @click="login" style="margin-top: 24px;">
+      <Button long type="primary" @click="onLogin" style="margin-top: 24px;">
         {{ $t('login.login') }}
       </Button>
     </div>
@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import api from '@/api'
+import { mapActions } from 'vuex'
 
 export default {
   data() {
@@ -94,15 +94,20 @@ export default {
   },
 
   methods: {
+    ...mapActions(['login']),
+
     getCaptcha() {
       // ...
     },
 
-    login() {
+    onLogin() {
       this.$refs[this.mode].validate(valid => {
         if (valid) {
-          api.user.login().then(res => {
-            console.log(res.data)
+          this.login(this.user).then(res => {
+            const redirect = this.$route.query.redirect || '/'
+            this.$router.push(redirect)
+          }).catch(() => {
+            this.$Message.error(this.$t('login.loginFailed'))
           })
         }
       })
