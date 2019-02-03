@@ -56,6 +56,7 @@ export default {
 .prophet-account-settings {
   display: flex;
   width: 100%;
+  margin-left: -16px;
 
   &-menu {
     .ivu-menu-item {
