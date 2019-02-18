@@ -2,7 +2,6 @@ import Vue from 'vue'
 import iView from 'iview'
 import Router from 'vue-router'
 import store from '@/store'
-import home from './routes/home'
 import dashboard from './routes/dashboard'
 import form from './routes/form'
 import profile from './routes/profile'
@@ -10,6 +9,8 @@ import result from './routes/result'
 import exception from './routes/exception'
 import account from './routes/account'
 import user from './routes/user'
+
+import BasicLayout from '@/layouts/basic-layout'
 
 Vue.use(Router)
 
@@ -23,8 +24,14 @@ export const menus = [
 ]
 
 const routes = [
-  home,
-  ...menus,
+  {
+    path: '/',
+    name: 'home',
+    redirect: '/dashboard',
+    component: BasicLayout,
+    children: menus
+  },
+  // ...menus,
   user
 ]
 

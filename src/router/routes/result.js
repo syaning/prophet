@@ -1,10 +1,10 @@
-import BasicLayout from '@/layouts/basic-layout'
+import BlankLayout from '@/layouts/blank-layout'
 
 export default {
   path: '/result',
   name: 'result',
   redirect: '/result/success',
-  component: BasicLayout,
+  component: BlankLayout,
   meta: { title: 'menu.result', icon: 'md-checkmark-circle-outline' },
   children: [{
     path: 'success',

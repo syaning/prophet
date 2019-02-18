@@ -1,10 +1,10 @@
-import BasicLayout from '@/layouts/basic-layout'
+import BlankLayout from '@/layouts/blank-layout'
 
 export default {
   path: '/exception',
   name: 'exception',
   redirect: '/exception/403',
-  component: BasicLayout,
+  component: BlankLayout,
   meta: { title: 'menu.exception', icon: 'md-warning' },
   children: [{
     path: '403',

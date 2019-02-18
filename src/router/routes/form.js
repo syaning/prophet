@@ -1,10 +1,10 @@
-import BasicLayout from '@/layouts/basic-layout'
+import BlankLayout from '@/layouts/blank-layout'
 
 export default {
   path: '/form',
   name: 'form',
   redirect: '/form/basic-form',
-  component: BasicLayout,
+  component: BlankLayout,
   meta: { title: 'menu.form', icon: 'md-create' },
   children: [{
     path: 'basic-form',

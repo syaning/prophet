@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import accountRoutes from '@/router/routes/account'
+
 const prefixCls = 'prophet-account-settings'
 
 export default {
@@ -39,10 +41,8 @@ export default {
     },
 
     menus() {
-      const routes = this.$router.options.routes
-      const route = routes.find(r => r.name === 'account')
-      const subroute = route.children.find(r => r.name === 'account-settings')
-      return subroute.children
+      const route = accountRoutes.children.find(r => r.name === 'account-settings')
+      return route.children
     },
 
     activeName() {

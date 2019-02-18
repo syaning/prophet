@@ -1,10 +1,10 @@
-import BasicLayout from '@/layouts/basic-layout'
+import BlankLayout from '@/layouts/blank-layout'
 
 export default {
   path: '/account',
   name: 'account',
   redirect: '/account/center',
-  component: BasicLayout,
+  component: BlankLayout,
   meta: { title: 'menu.account', icon: 'md-person' },
   children: [{
     path: 'center',

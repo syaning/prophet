@@ -1,10 +1,10 @@
-import BasicLayout from '@/layouts/basic-layout'
+import BlankLayout from '@/layouts/blank-layout'
 
 export default {
   path: '/profile',
   name: 'profile',
   redirect: '/result/basic',
-  component: BasicLayout,
+  component: BlankLayout,
   meta: { title: 'menu.profile', icon: 'md-list-box' },
   children: [{
     path: 'basic',

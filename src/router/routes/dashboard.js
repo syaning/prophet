@@ -1,10 +1,10 @@
-import BasicLayout from '@/layouts/basic-layout'
+import BlankLayout from '@/layouts/blank-layout'
 
 export default {
   path: '/dashboard',
   name: 'dashboard',
   redirect: '/dashboard/analysis',
-  component: BasicLayout,
+  component: BlankLayout,
   meta: { title: 'menu.dashboard', icon: 'md-speedometer' },
   children: [{
     path: 'analysis',
