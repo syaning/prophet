@@ -7,5 +7,9 @@ export default {
 
   logout() {
     return request.post('/api/user/logout')
+  },
+
+  profile() {
+    return request.get('/api/user/profile')
   }
 }

@@ -19,3 +19,12 @@ mock
   // logout
   .onPost('/api/user/logout')
   .reply(200)
+
+  // profile
+  .onGet('/api/user/profile')
+  .reply(200, {
+    email: 'prophet@example.com',
+    nickname: 'Prophet',
+    description: '',
+    country: 'china'
+  })
