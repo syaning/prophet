@@ -9,7 +9,7 @@
           </FormItem>
           <FormItem prop="password">
             <Input prefix="ios-lock-outline" v-model="user.password" type="password"
-              :placeholder="$t('login.password.placeholder')" />
+              :placeholder="$t('login.password.placeholder')" @on-enter="onLogin" />
           </FormItem>
         </Form>
       </TabPane>

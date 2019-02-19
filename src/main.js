@@ -6,6 +6,8 @@ import i18n from './i18n'
 import router from './router'
 import store from './store'
 
+document.title = i18n.t('app.title')
+
 Vue.config.productionTip = false
 Vue.use(iView)
 

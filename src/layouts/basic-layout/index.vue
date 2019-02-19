@@ -9,7 +9,7 @@
       v-model="collapsed">
       <div :class="logoClasses">
         <img src="@/assets/logo.png">
-        <h1 v-show="!collapsed">Prophet</h1>
+        <h1 v-show="!collapsed">{{ $t('app.title') }}</h1>
       </div>
       <menubar :collapsed="collapsed"></menubar>
     </Sider>

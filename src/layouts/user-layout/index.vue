@@ -7,7 +7,7 @@
     <Content>
       <div :class="contentHeaderClasses">
         <img src="@/assets/logo.png" />
-        <h1>Prophet</h1>
+        <h1>{{ $t('app.title') }}</h1>
       </div>
       <router-view></router-view>
     </Content>
@@ -52,7 +52,7 @@ export default {
   min-height: 100vh;
 
   &-header {
-    background: #f5f7f9;
+    background: #f5f7f9 !important;
     padding: 0 20px;
   }
 
