@@ -2,7 +2,7 @@
   <div :class="prefixCls">
     <Menu
       ref="menuExpand"
-      :class="expandClasses"
+      :class="expandedClasses"
       v-show="!collapsed"
       :theme="theme"
       width="auto"
@@ -10,21 +10,26 @@
       :active-name="activeName"
       :open-names="openNames">
 
-      <Submenu v-for="menu in menus" :key="menu.name" :name="menu.name">
-        <template slot="title">
-          <Icon :type="menu.meta.icon" />
-          {{ $t(menu.meta.title) }}
-        </template>
+      <template v-for="menu in menus">
+        <Submenu v-if="menu.children" :key="menu.name" :name="menu.name">
+          <template slot="title">
+            <Icon :type="menu.meta.icon" />
+            {{ $t(menu.meta.title) }}
+          </template>
+          <router-link v-for="item in menu.children" :key="item.name" :to="{ name: item.name }">
+            <MenuItem :name="item.name">
+              {{ $t(item.meta.title) }}
+            </MenuItem>
+          </router-link>
+        </Submenu>
 
-        <router-link
-          v-for="item in menu.children"
-          :key="item.name"
-          :to="{name: item.name}">
-          <MenuItem :name="item.name">
-            {{ $t(item.meta.title) }}
+        <router-link v-else :key="menu.name" :to="{ name: menu.name }">
+          <MenuItem :name="menu.name">
+            <Icon :type="menu.meta.icon" />
+            {{ $t(menu.meta.title) }}
           </MenuItem>
         </router-link>
-      </Submenu>
+      </template>
     </Menu>
 
     <Menu
@@ -37,7 +42,8 @@
         :key="menu.name"
         :name="menu.name"
         :class="{'collapsed-active-item': collapsedActiveName === menu.name}">
-        <Dropdown placement="right-start">
+
+        <Dropdown v-if="menu.children" placement="right-start">
           <Icon :type="menu.meta.icon" size="16" />
           <DropdownMenu slot="list">
             <router-link
@@ -51,6 +57,12 @@
             </router-link>
           </DropdownMenu>
         </Dropdown>
+
+        <Tooltip v-else :content="$t(menu.meta.title)" placement="right">
+          <router-link :to="{ name: menu.name }">
+            <Icon :type="menu.meta.icon" />
+          </router-link>
+        </Tooltip>
       </MenuItem>
     </Menu>
   </div>
@@ -78,8 +90,8 @@ export default {
   },
 
   computed: {
-    expandClasses() {
-      return `${prefixCls}-expand`
+    expandedClasses() {
+      return `${prefixCls}-expanded`
     },
 
     collapsedClasses() {
@@ -92,7 +104,10 @@ export default {
 
     menuItemNames() {
       return this.menus.reduce((ret, menu) => {
-        return ret.concat(menu.children.map(item => item.name))
+        if (menu.children) {
+          return ret.concat(menu.children.map(item => item.name))
+        }
+        return ret.concat(menu.name)
       }, [])
     },
 
@@ -107,7 +122,7 @@ export default {
     },
 
     collapsedActiveName() {
-      return this.openNames.length ? this.openNames[0] : ''
+      return this.openNames.length ? this.openNames[0] : this.activeName
     },
 
     openNames() {
@@ -135,6 +150,20 @@ export default {
 .prophet-menubar {
   margin: 16px 0;
 
+  &-expanded {
+    > a > .ivu-menu-item {
+      i {
+        margin-right: 8px;
+      }
+
+      &-active,
+      &-selected {
+        background: #2d8cf0 !important;
+        color: #fff !important;
+      }
+    }
+  }
+
   &-collapsed {
     .ivu-menu-item {
       padding: 0;
@@ -147,6 +176,10 @@ export default {
 
       &.collapsed-active-item {
         color: #fff !important;
+
+        > .ivu-tooltip i {
+          color: #fff;
+        }
       }
 
       .ivu-dropdown {
@@ -187,6 +220,26 @@ export default {
               }
             }
           }
+        }
+      }
+
+      > .ivu-tooltip {
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        margin: 4px 0;
+
+        .ivu-tooltip-arrow {
+          border-right-color: @menu-dark-title;
+        }
+
+        .ivu-tooltip-inner {
+          background: @menu-dark-title;
+        }
+
+        i {
+          padding: 0 32px;
+          color: @menu-dark-subsidiary-color;
         }
       }
     }

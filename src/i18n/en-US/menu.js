@@ -34,5 +34,7 @@ export default {
   basicSettings: 'Basic Settings',
   securitySettings: 'Security Settings',
   accountBinding: 'Account Binding',
-  messageNotification: 'New Message Notification'
+  messageNotification: 'New Message Notification',
+
+  about: 'About'
 }

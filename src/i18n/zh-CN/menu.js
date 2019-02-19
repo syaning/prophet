@@ -34,5 +34,7 @@ export default {
   basicSettings: '基本设置',
   securitySettings: '安全设置',
   accountBinding: '账号绑定',
-  messageNotification: '新消息通知'
+  messageNotification: '新消息通知',
+
+  about: '关于'
 }

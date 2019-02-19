@@ -8,6 +8,7 @@ import profile from './routes/profile'
 import result from './routes/result'
 import exception from './routes/exception'
 import account from './routes/account'
+import about from './routes/about'
 import user from './routes/user'
 
 import BasicLayout from '@/layouts/basic-layout'
@@ -20,7 +21,8 @@ export const menus = [
   profile,
   result,
   exception,
-  account
+  account,
+  about
 ]
 
 const routes = [
