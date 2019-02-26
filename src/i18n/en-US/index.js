@@ -5,6 +5,7 @@ import stepForm from './stepForm'
 import result from './result'
 import login from './login'
 import register from './register'
+import exception from './exception'
 
 export default {
   app,
@@ -13,5 +14,6 @@ export default {
   stepForm,
   result,
   login,
-  register
+  register,
+  exception
 }
