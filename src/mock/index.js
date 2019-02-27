@@ -1,8 +1,11 @@
-/* eslint-disable no-unused-vars */
-
-import mock from './mock'
+import MockAdapter from 'axios-mock-adapter'
+import request from '@/api/request'
 import user from './modules/user'
+import geographic from './modules/geographic'
 
-/* eslint-enable no-unused-vars */
+const mock = new MockAdapter(request)
+
+user(mock)
+geographic(mock)
 
 mock.onAny().passThrough()
