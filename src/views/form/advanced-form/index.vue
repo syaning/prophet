@@ -190,6 +190,6 @@ export default {
   background: #fff;
   box-shadow: 0 -1px 2px rgba(0,0,0,.03);
   border-top: 1px solid #e8e8e8;
-  z-index: 0;
+  z-index: 10;
 }
 </style>
