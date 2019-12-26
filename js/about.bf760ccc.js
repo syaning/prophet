@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["about"],{"613f":function(e,n,t){"use strict";t.r(n);var u=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",[e._v("about")])},o=[],i=t("2877"),l={},a=Object(i["a"])(l,u,o,!1,null,null,null);a.options.__file="index.vue";n["default"]=a.exports}}]);
+//# sourceMappingURL=about.bf760ccc.js.map

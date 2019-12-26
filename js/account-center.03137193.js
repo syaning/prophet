@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["account-center"],{4980:function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",[e._v("account center")])},u=[],o=t("2877"),i={},l=Object(o["a"])(i,c,u,!1,null,null,null);l.options.__file="index.vue";n["default"]=l.exports}}]);
+//# sourceMappingURL=account-center.03137193.js.map

@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["account-binding"],{"976d":function(n,i,e){"use strict";e.r(i);var t=function(){var n=this,i=n.$createElement,e=n._self._c||i;return e("div",[n._v("binding")])},u=[],c=e("2877"),l={},o=Object(c["a"])(l,t,u,!1,null,null,null);o.options.__file="binding.vue";i["default"]=o.exports}}]);
+//# sourceMappingURL=account-binding.49927e81.js.map

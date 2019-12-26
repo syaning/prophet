@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["workplace"],{"4dc5":function(e,n,l){"use strict";l.r(n);var t=function(){var e=this,n=e.$createElement,l=e._self._c||n;return l("div",[e._v("workplace")])},c=[],o=l("2877"),i={},r=Object(o["a"])(i,t,c,!1,null,null,null);r.options.__file="index.vue";n["default"]=r.exports}}]);
+//# sourceMappingURL=workplace.c6c46c37.js.map

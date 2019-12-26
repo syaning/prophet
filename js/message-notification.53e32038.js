@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["message-notification"],{"7cd0":function(n,i,t){"use strict";t.r(i);var e=function(){var n=this,i=n.$createElement,t=n._self._c||i;return t("div",[n._v("notification")])},o=[],c=t("2877"),a={},s=Object(c["a"])(a,e,o,!1,null,null,null);s.options.__file="notification.vue";i["default"]=s.exports}}]);
+//# sourceMappingURL=message-notification.53e32038.js.map
